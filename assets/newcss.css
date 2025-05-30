@@ -1872,21 +1872,35 @@ img {
   }
 }
 
-/* Dark mode support */
+/* ==================== Dark Theme Styles ==================== */
+
+/* Social sidebar in dark theme */
 body.dark-theme .social-sidebar__content {
+  /* Semi-transparent background with blur effect */
   background-color: rgba(var(--container-color-rgb), 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  /* Subtle border and shadow */
   border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  
+  /* Smooth transitions */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Social link items in dark theme */
 body.dark-theme .social-sidebar__link {
   background: var(--body-color);
   border-color: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
 }
 
+/* Hover effect for social links */
 body.dark-theme .social-sidebar__link:hover {
   background: var(--container-color);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
 }
 
 /* Ripple effect (added by JS) */
