@@ -4,16 +4,73 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <title>AyuSH K</title>
     <link rel="stylesheet" href="assets/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/newcss.css" />
+    <link rel="stylesheet" href="assets/custom.css" />
     <link
       rel="stylesheet"
       href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
     />
+    <style>
+      .home__subtitle {
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: var(--text-color);
+        min-height: 30px;
+        position: relative;
+      }
+
+      .cursor {
+        display: inline-block;
+        width: 2px;
+        background-color: var(--title-color);
+        animation: blink 0.7s infinite;
+        margin-left: 2px;
+        height: 1em;
+      }
+
+      @keyframes blink {
+        0%, 50%, 100% {
+          opacity: 1;
+        }
+        25%, 75% {
+           opacity: 0;
+        }
+      }
+    </style>
   </head>
 
   <body oncontextmenu="return false">
+    <!-- Welcome Page -->
+    <div class="welcome-page" id="welcomePage">
+        <div class="welcome-content">
+            <div class="welcome-title-wrapper">
+                <span class="welcome-title-letter" data-letter="W">W</span>
+                <span class="welcome-title-letter" data-letter="e">e</span>
+                <span class="welcome-title-letter" data-letter="l">l</span>
+                <span class="welcome-title-letter" data-letter="c">c</span>
+                <span class="welcome-title-letter" data-letter="o">o</span>
+                <span class="welcome-title-letter" data-letter="m">m</span>
+                <span class="welcome-title-letter" data-letter="e">e</span>
+            </div>
+            <div class="welcome-subtitle">
+                <span class="welcome-subtitle-text">to my creative space</span>
+            </div>
+            <div class="welcome-loader">
+                <div class="loader-bar"></div>
+                <div class="loader-percentage">0%</div>
+            </div>
+            <!-- Scroll indicator removed as per user request -->
+        </div>
+        <div class="welcome-particles" id="particles-js"></div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    
     <header class="header" id="header">
       <nav class="nav container">
         <a href="#" class="nav__logo">AyuSHK</a>
@@ -30,13 +87,18 @@
               </a>
             </li>
             <li class="nav__item">
+              <a href="#hobbies" class="nav__link">
+                <i class="uil uil-heart nav__icon"></i>Hobbies
+              </a>
+            </li>
+            <li class="nav__item">
               <a href="#skills" class="nav__link">
                 <i class="uil uil-file-alt nav__icon"></i>Skills
               </a>
             </li>
             <li class="nav__item">
               <a href="#qualification" class="nav__link">
-                <i class="uil uil-briefcase-alt nav__icon"></i>Qualification
+                <i class="uil uil-briefcase-alt nav__icon"></i>Qualifications
               </a>
             </li>
             <li class="nav__item">
@@ -44,6 +106,27 @@
                 <i class="uil uil-scenery nav__icon"></i>Projects
               </a>
             </li>
+
+            <li class="nav__item">
+              <a href="#gallery" class="nav__link">
+                <i class="uil uil-images nav__icon"></i>Gallery
+              </a>
+            </li>
+
+            <li class="nav__item nav__dropdown">
+              <a href="#blog" class="nav__link">
+                <i class="uil uil-document-layout-left nav__icon"></i>Blog <i class="uil uil-angle-down nav__dropdown-arrow"></i>
+              </a>
+              <ul class="nav__dropdown-menu">
+                <li class="nav__dropdown-item">
+                  <a href="#blog" class="nav__dropdown-link">All Posts</a>
+                </li>
+                <li class="nav__dropdown-item">
+                  <a href="facebook-updates.html" class="nav__dropdown-link">Facebook Updates</a>
+                </li>
+              </ul>
+            </li>
+
             <li class="nav__item">
               <a href="#contact" class="nav__link">
                 <i class="uil uil-message nav__icon"></i>Contact-Me
@@ -75,6 +158,7 @@
                 href="https://www.linkedin.com/in/ayushkuikel4/"
                 target="_blank"
                 class="home__social-icon"
+                title="LinkedIn"
               >
                 <i class="uil uil-linkedin-alt home__icon"></i>
               </a>
@@ -83,18 +167,45 @@
                 href="https://github.com/Ayush2056"
                 target="_blank"
                 class="home__social-icon"
+                title="GitHub"
               >
                 <i class="uil uil-github-alt home__icon"></i>
               </a>
+
               <a
                 href="https://www.facebook.com/ayush.kuikel"
                 target="_blank"
                 class="home__social-icon"
+                title="Facebook"
               >
                 <i class="uil uil-facebook-alt home__icon"></i>
               </a>
-
             </div>
+
+            <div class="home__data">
+              <h1 class="home__title">Hi, I'm <span class="text-gradient">AyuSh Kuikel</span></h1>
+              <h3 class="home__subtitle">
+                <span id="typed-text">Passionate Developer | Tech Enthusiast | Problem Solver</span>
+                <span class="cursor">|</span>
+              </h3>
+              <p class="home__description">
+                I'm a Computer Science graduate student at <strong>Wolverhampton University</strong>, UK, 
+                specializing in software development and emerging technologies. With a strong foundation in 
+                programming and problem-solving, I'm passionate about creating efficient and innovative solutions.
+              </p>
+              <div class="home__buttons">
+                <a href="#contact" class="button button--flex">
+                  Get In Touch <i class="uil uil-message button__icon"></i>
+                </a>
+                <a href="#portfolio" class="button button--flex button--white">
+                  View My Work <i class="uil uil-arrow-right button__icon"></i>
+                </a>
+                <a href="assets/CVS.pdf" class="button button--flex button--ghost">
+                  Download CV <i class="uil uil-download button__icon"></i>
+                </a>
+              </div>
+            </div>
+
             <div class="home__img">
               <svg
                 class="home__blob"
@@ -126,19 +237,6 @@
                 </g>
               </svg>
             </div>
-            <div class="home__data">
-              <h1 class="home__title">Hi, I'm AyuSh Kuikel</h1>
-              <h3 class="home__subtitle">
-                Develop Softwares
-              </h3>
-              <p class="home__description">
-                Graduate Student Computer Science
-                <strong>Wolverhampton University </strong>, UK.
-              </p>
-              <a href="#contact" class="button button--flex">
-                Contact me<i class="uil uil-message button__icon"></i>
-              </a>
-            </div>
           </div>
 
           <div class="home__scroll">
@@ -153,37 +251,172 @@
 
       <!--======================= About========================-->
 
+      <script>
+        const texts = [
+          "Software Developer & Learner",
+          "Passionate Tech Enthusiast",
+          "Problem Solver",
+          "Web Developer",
+          "Music Lover"
+        ];
+
+        let count = 0;
+        let index = 0;
+        let currentText = '';
+        let letter = '';
+        const typedText = document.getElementById("typed-text");
+
+        function type() {
+          if (count === texts.length) count = 0;
+          currentText = texts[count];
+          letter = currentText.slice(0, ++index);
+          typedText.textContent = letter;
+
+          if (letter.length === currentText.length) {
+            setTimeout(() => erase(), 1500);
+          } else {
+            setTimeout(type, 100);
+          }
+        }
+
+        function erase() {
+          if (index > 0) {
+            letter = currentText.slice(0, --index);
+            typedText.textContent = letter;
+            setTimeout(erase, 50);
+          } else {
+            count++;
+            setTimeout(type, 200);
+          }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+          setTimeout(type, 500);
+        });
+      </script>
+
       <section class="about section" id="about">
         <h2 class="section__title">About Me</h2>
         <span class="section__subtitle">My introduction</span>
 
-        <div class="about__container container grid">       
-          <img src="assets\img\makalu.jpg" alt="" class="about__img" />
+        <div class="about__container container grid">
+          <div class="about__img">
+            <img src="assets/img/AyuSh.jpg" alt="AyuSh Kuikel" class="about__img" />
+          </div>
 
           <div class="about__data">
             <p class="about__description">
-              I have a self-motivated and can-do attitude, thriving in challenging and dynamic environments. Seeking a competitive position to enhance my skills and contribute to a professional organization. I'm very much passionate to learn new stuff that interests me and can help me to get better.
+              I'm a passionate Computer Science graduate student at Wolverhampton University with a strong interest in software development and emerging technologies. I enjoy solving complex problems and creating innovative solutions that make a difference.
             </p>
 
             <div class="about__info">
-  
-
               <div>
-                <span class="about__info-title">07+</span>
-                <span class="about__info-name"
-                  > <br />
-                  Projects</span
-                >
+                <span class="about__info-title">2+</span>
+                <span class="about__info-name">Years <br /> experience</span>
               </div>
-
-  
+              <div>
+                <span class="about__info-title">10+</span>
+                <span class="about__info-name">Completed <br /> projects</span>
+              </div>
+              <div>
+                <span class="about__info-title">3+</span>
+                <span class="about__info-name">Programming <br /> languages</span>
+              </div>
             </div>
 
             <div class="about__buttons">
-              <a download="" href="assets\CVS.pdf
-              " class="button button--flex">
-                Download CV<i class="fas fa-download button__icon"></i>
+              <a download="" href="assets/CVS.pdf" class="button button--flex">
+                Download CV<i class="uil uil-download-alt button__icon"></i>
               </a>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!--===================== HOBBIES & INTERESTS =====================-->
+      <section class="hobbies section" id="hobbies">
+        <h2 class="section__title">Hobbies & Interests</h2>
+        <span class="section__subtitle">What I enjoy doing</span>
+
+        <div class="hobbies__container container grid">
+          <div class="hobbies__content">
+            <div>
+              <i class="uil uil-music hobbies__icon"></i>
+              <h3 class="hobbies__title">Music</h3>
+            </div>
+            <span class="button button--flex button--small button--link hobbies__button">
+              View more
+              <i class="uil uil-arrow-right button__icon"></i>
+            </span>
+            <div class="hobbies__modal">
+              <div class="hobbies__modal-content">
+                <h4 class="hobbies__modal-title">Music</h4>
+                <i class="uil uil-times hobbies__modal-close"></i>
+                <p class="hobbies__modal-description">
+                  I'm passionate about music production and playing guitar. I enjoy creating my own compositions and exploring different genres.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hobbies__content">
+            <div>
+              <i class="uil uil-camera hobbies__icon"></i>
+              <h3 class="hobbies__title">Photography</h3>
+            </div>
+            <span class="button button--flex button--small button--link hobbies__button">
+              View more
+              <i class="uil uil-arrow-right button__icon"></i>
+            </span>
+            <div class="hobbies__modal">
+              <div class="hobbies__modal-content">
+                <h4 class="hobbies__modal-title">Photography</h4>
+                <i class="uil uil-times hobbies__modal-close"></i>
+                <p class="hobbies__modal-description">
+                  Capturing moments and exploring different photography techniques is one of my favorite creative outlets.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hobbies__content">
+            <div>
+              <i class="uil uil-book-open hobbies__icon"></i>
+              <h3 class="hobbies__title">Reading</h3>
+            </div>
+            <span class="button button--flex button--small button--link hobbies__button">
+              View more
+              <i class="uil uil-arrow-right button__icon"></i>
+            </span>
+            <div class="hobbies__modal">
+              <div class="hobbies__modal-content">
+                <h4 class="hobbies__modal-title">Reading</h4>
+                <i class="uil uil-times hobbies__modal-close"></i>
+                <p class="hobbies__modal-description">
+                  I enjoy reading books on technology, science fiction, and personal development to expand my knowledge and perspective.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hobbies__content">
+            <div>
+              <i class="uil uil-hiking hobbies__icon"></i>
+              <h3 class="hobbies__title">Hiking</h3>
+            </div>
+            <span class="button button--flex button--small button--link hobbies__button">
+              View more
+              <i class="uil uil-arrow-right button__icon"></i>
+            </span>
+            <div class="hobbies__modal">
+              <div class="hobbies__modal-content">
+                <h4 class="hobbies__modal-title">Hiking</h4>
+                <i class="uil uil-times hobbies__modal-close"></i>
+                <p class="hobbies__modal-description">
+                  Exploring nature and going on hiking adventures helps me stay active and connected with the outdoors.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -370,13 +603,13 @@
               <!--====== Qualification 1 ======-->
               <div class="qualification__data">
                 <div>
-                  <h3 class="qualification__title">SSLC</h3>
+                  <h3 class="qualification__title">Slc</h3>
                   <span class="qualification__subtitle"
-                    >S.V.S <br />High School</span
+                    >Surya Secondary Boarding School <br />Khandbari </span
                   >
                   <div class="qualification__calender">
                     <i class="uil uil-calendar-alt"></i>
-                    - 2019
+                    -2016
                   </div>
                   <span
                     class="button button--flex button--small button--link services__button"
@@ -395,22 +628,21 @@
                           <i
                             class="uil uil-check-circle services__moda-icon"
                           ></i>
-                          <p>
-                            Subjects studied: Science, Maths, English,
-                            Social Studies,Kannada,Hindi.
+                          <p> Best Childhood
+
                           </p>
                         </li>
                         <li class="services__modal-service">
                           <i
                             class="uil uil-check-circle services__moda-icon"
                           ></i>
-                          <p>Scored 91%</p>
+                          <p>A grade</p>
                         </li>
                         <li class="services__modal-service">
                           <i
                             class="uil uil-check-circle services__moda-icon"
                           ></i>
-                          <p>Came runners up in inter-school Ball Badminton</p>
+                          <p>1ST in Musical Program</p>
                         </li>
                       </ul>
                     </div>
@@ -432,13 +664,13 @@
                   <span class="qualification__line"></span>
                 </div>
                 <div>
-                  <h3 class="qualification__title">Class 12th</h3>
+                  <h3 class="qualification__title">+2</h3>
                   <span class="qualification__subtitle"
-                    >Vidyodaya <br />Pre University College</span
+                    >Reliances College <br />Kathmandu</span
                   >
                   <div class="qualification__calender">
                     <i class="uil uil-calendar-alt"></i>
-                    - 2021
+                    2017-2019
                   </div>
                   <span
                     class="button button--flex button--small button--link services__button"
@@ -449,7 +681,7 @@
                   <div class="services__modal">
                     <div class="services__modal-content">
                       <h4 class="services__modal-title">
-                        Class 12th Summary :
+                        +2 Summary :
                       </h4>
                       <i class="uil uil-times services__modal-close"></i>
                       <ul class="services__modal-services grid">
@@ -458,15 +690,15 @@
                             class="uil uil-check-circle services__moda-icon"
                           ></i>
                           <p>
-                            Subjects studied: Physics, Chemistry, Maths,
-                            English, Statistics , Hindi.
+                
+                Science, Biology, Physics, Chemistry,Maths, English, and also Nepalis
                           </p>
                         </li>
                         <li class="services__modal-service">
                           <i
                             class="uil uil-check-circle services__moda-icon"
                           ></i>
-                          <p>Scored 87.5%</p>
+                          <p>A</p>
                         </li>
                       </ul>
                     </div>
@@ -477,13 +709,14 @@
               <!--====== Qualification 3 ======-->
               <div class="qualification__data">
                 <div>
-                  <h3 class="qualification__title">College</h3>
+                  <h3 class="qualification__title">Bachelors In Compute Science</h3>
                   <span class="qualification__subtitle"
-                    >Canara Enginnering College, Manglore</span
+                    >Herald College
+                    University of wolverhamptone</span
                   >
                   <div class="qualification__calender">
                     <i class="uil uil-calendar-alt"></i>
-                    2021 - 2025
+        2021-2025
                   </div>
                   <span
                     class="button button--flex button--small button--link services__button"
@@ -493,32 +726,24 @@
                   </span>
                   <div class="services__modal">
                     <div class="services__modal-content">
-                      <h4 class="services__modal-title">College Summary :</h4>
+                      <h4 class="services__modal-title"> Bachelors College Degrees Summary :</h4>
                       <i class="uil uil-times services__modal-close"></i>
                       <ul class="services__modal-services grid">
                         <li class="services__modal-service">
-                          <i
-                            class="uil uil-check-circle services__modal-icon"
-                          ></i>
-                          <p>
-                            Studying core subjects of IT including DSA, Embedded
-                            systems, Design analysis and algorithm, Operating
-                            systems, and Computer architecture .
-                          </p>
+              
+              
                         </li>
                         <li class="services__modal-service">
                           <i
                             class="uil uil-check-circle services__modal-icon"
                           ></i>
-                          <p>Scored an aggregate of 8.50 CGPA till now.</p>
+                          <p>Passout: 2025</p>
                         </li>
                         <li class="services__modal-service">
                           <i
                             class="uil uil-check-circle services__modal-icon"
                           ></i>
-                          <p>
-                            Student coordinator in media and
-                            publication club of the college.
+                      <p>A grade
                           </p>
                         </li>
                       </ul>
@@ -679,6 +904,594 @@
         </div>
       </section>
 
+      <!--===================== Gallery & Videos =====================-->
+      <section class="gallery section" id="gallery">
+        <h2 class="section__title">Gallery & Videos</h2>
+        <span class="section__subtitle">My visual journey and content</span>
+        
+        <!-- Gallery Tabs -->
+        <div class="gallery__tabs">
+          <div class="gallery__tab active" data-tab="photos">
+            <i class="uil uil-images"></i> Photos
+          </div>
+          <div class="gallery__tab" data-tab="videos">
+            <i class="uil uil-youtube"></i> YouTube Videos
+          </div>
+        </div>
+
+        <!-- Photos Tab Content -->
+        <div class="gallery__content active" id="photos-tab">
+          <!-- Gallery Filters -->
+          <div class="gallery__filters">
+            <span class="gallery__filter active" data-filter="all">All</span>
+            <span class="gallery__filter" data-filter="personal">Personal</span>
+          </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery__container container">
+          <!-- Gallery Item 1 -->
+          <div class="gallery__item" data-category="personal">
+            <img src="assets/img/Ayush.jpg" alt="Portrait" class="gallery__img">
+            <div class="gallery__overlay">
+              <h3 class="gallery__title">Portrait</h3>
+              <p class="gallery__description">Professional headshot</p>
+            </div>
+          </div>
+          
+          <!-- Gallery Item 2 -->
+          <div class="gallery__item" data-category="personal">
+            <img src="assets/img/IMG-20230319-WA0009.jpg" alt="Travel" class="gallery__img">
+            <div class="gallery__overlay">
+              <h3 class="gallery__title">Travel</h3>
+              <p class="gallery__description">Exploring new destinations</p>
+            </div>
+          </div>
+          
+          <!-- Gallery Item 3 -->
+          <div class="gallery__item" data-category="personal">
+            <img src="assets/img/IMG-20230319-WA0010.jpg" alt="Event" class="gallery__img">
+            <div class="gallery__overlay">
+              <h3 class="gallery__title">Special Moments</h3>
+              <p class="gallery__description">Memorable occasions</p>
+            </div>
+          </div>
+          
+          <!-- Gallery Item 4 -->
+          <div class="gallery__item" data-category="personal">
+            <img src="assets/img/makalu.jpg" alt="Adventure" class="gallery__img">
+            <div class="gallery__overlay">
+              <h3 class="gallery__title">Adventure</h3>
+              <p class="gallery__description">Exciting experiences</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lightbox Modal -->
+        <div id="galleryModal" class="gallery__modal">
+          <span class="gallery__close">&times;</span>
+          <img class="gallery__modal-content" id="modalImage">
+          <div id="caption"></div>
+        </div>
+          </div>
+          
+          <!-- Videos Tab Content -->
+          <div class="gallery__content" id="videos-tab">
+            <div class="videos__container container">
+              <!-- Video 1 -->
+              <div class="video__item">
+                <div class="video__wrapper">
+                  <iframe 
+                    src="https://www.youtube.com/embed/nRS1jF7KjC4" 
+                    title="Dhereii Dhereii Aauchha Man - Cover Song" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                  </iframe>
+                </div>
+                <h3 class="video__title">Dhereii Dhereii Aauchha Man - Cover Song</h3>
+                <p class="video__description">A beautiful cover of the song originally by Adrian Pradhan, showcasing my musical talent and passion for Nepali music.</p>
+              </div>
+              
+              <!-- Video 2 -->
+              <div class="video__item">
+                <div class="video__wrapper">
+                  <iframe 
+                    src="https://www.youtube.com/embed/J175jKuszn4" 
+                    title="Timi Ma Bhanda Koshauu - Cover By Me" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                  </iframe>
+                </div>
+                <h3 class="video__title">Timi Ma Bhanda Koshauu- Cover By Me</h3>
+                <p class="video__description">Experience the energy of my live performance of this beautiful Nepali song.</p>
+              </div>
+              
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery & Videos Styles -->
+      <style>
+        /* Gallery Section */
+        .gallery__tabs {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 2rem;
+          background: var(--container-color);
+          padding: 0.5rem;
+          border-radius: 3rem;
+          max-width: 400px;
+          margin: 2rem auto;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery__tab {
+          padding: 0.75rem 1.5rem;
+          border-radius: 2rem;
+          cursor: pointer;
+          font-weight: 500;
+          color: var(--text-color);
+          transition: all 0.3s ease;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        .gallery__tab i {
+          font-size: 1.2rem;
+        }
+
+        .gallery__tab.active {
+          background: var(--first-color);
+          color: #fff;
+        }
+
+        .gallery__content {
+          display: none;
+          animation: fadeIn 0.5s ease;
+        }
+
+        .gallery__content.active {
+          display: block;
+        }
+
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Videos Section */
+        .videos__container {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmin(300px, 1fr));
+          gap: 2rem;
+          margin-top: 2rem;
+        }
+
+        .video__item {
+          background: var(--container-color);
+          border-radius: 1rem;
+          overflow: hidden;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .video__item:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .video__wrapper {
+          position: relative;
+          padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+          height: 0;
+          overflow: hidden;
+        }
+
+        .video__wrapper iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: none;
+        }
+
+        .video__title {
+          padding: 1.25rem 1.5rem 0.5rem;
+          font-size: 1.1rem;
+          color: var(--title-color);
+        }
+
+        .video__description {
+          padding: 0 1.5rem 1.5rem;
+          color: var(--text-color);
+          font-size: 0.9rem;
+          opacity: 0.9;
+        }
+
+        /* Gallery Filters */
+        .gallery__filters {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 1rem;
+          margin: 2rem 0;
+        }
+
+        .gallery__filter {
+          padding: 0.5rem 1.5rem;
+          background: var(--container-color);
+          color: var(--title-color);
+          border-radius: 2rem;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          font-weight: 500;
+          border: 1px solid var(--border-color);
+        }
+
+        .gallery__filter:hover,
+        .gallery__filter.active {
+          background: var(--first-color);
+          color: #fff;
+          border-color: var(--first-color);
+        }
+
+        .gallery__container {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          gap: 1.5rem;
+          margin-top: 1rem;
+        }
+
+        .gallery__item {
+          position: relative;
+          border-radius: 1rem;
+          overflow: hidden;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          aspect-ratio: 1;
+        }
+
+        .gallery__item:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery__img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          transition: transform 0.5s ease;
+        }
+
+        .gallery__item:hover .gallery__img {
+          transform: scale(1.05);
+        }
+
+        .gallery__overlay {
+          position: absolute;
+          bottom: -100%;
+          left: 0;
+          width: 100%;
+          padding: 1.5rem;
+          background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+          color: #fff;
+          transition: bottom 0.3s ease;
+          pointer-events: none;
+        }
+
+        .gallery__item:hover .gallery__overlay {
+          bottom: 0;
+        }
+
+        .gallery__title {
+          margin: 0 0 0.5rem 0;
+          font-size: 1.2rem;
+          color: #fff;
+        }
+
+        .gallery__description {
+          margin: 0;
+          font-size: 0.9rem;
+          opacity: 0.9;
+          color: #eee;
+        }
+
+        /* Lightbox Modal */
+        .gallery__modal {
+          display: none;
+          position: fixed;
+          z-index: 1000;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.9);
+          overflow: auto;
+          padding-top: 60px;
+        }
+
+        .gallery__modal-content {
+          margin: auto;
+          display: block;
+          max-width: 90%;
+          max-height: 80vh;
+          border-radius: 0.5rem;
+        }
+
+        .gallery__close {
+          position: absolute;
+          top: 20px;
+          right: 35px;
+          color: #f1f1f1;
+          font-size: 40px;
+          font-weight: bold;
+          cursor: pointer;
+          transition: 0.3s;
+        }
+
+        .gallery__close:hover {
+          color: #bbb;
+          text-decoration: none;
+        }
+
+        #caption {
+          margin: 15px auto;
+          display: block;
+          width: 80%;
+          max-width: 700px;
+          text-align: center;
+          color: #ccc;
+          padding: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+          .gallery__container {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          }
+          
+          .gallery__filters {
+            gap: 0.5rem;
+          }
+          
+          .gallery__filter {
+            padding: 0.4rem 1rem;
+            font-size: 0.9rem;
+          }
+        }
+      </style>
+
+      <!-- Gallery JavaScript -->
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          // Gallery Tabs Functionality
+          const tabs = document.querySelectorAll('.gallery__tab');
+          const contents = document.querySelectorAll('.gallery__content');
+          
+          tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+              // Remove active class from all tabs and contents
+              tabs.forEach(t => t.classList.remove('active'));
+              contents.forEach(c => c.classList.remove('active'));
+              
+              // Add active class to clicked tab and corresponding content
+              tab.classList.add('active');
+              const tabId = tab.getAttribute('data-tab');
+              document.getElementById(`${tabId}-tab`).classList.add('active');
+            });
+          });
+          
+          // Initialize first tab as active
+          if (tabs.length > 0 && contents.length > 0) {
+            tabs[0].classList.add('active');
+            contents[0].classList.add('active');
+          }
+          const filters = document.querySelectorAll('.gallery__filter');
+          const items = document.querySelectorAll('.gallery__item');
+          const modal = document.getElementById('galleryModal');
+          const modalImg = document.getElementById('modalImage');
+          const captionText = document.getElementById('caption');
+          const closeBtn = document.querySelector('.gallery__close');
+
+          // Filter functionality
+          filters.forEach(filter => {
+            filter.addEventListener('click', () => {
+              // Update active filter
+              filters.forEach(f => f.classList.remove('active'));
+              filter.classList.add('active');
+
+              const filterValue = filter.getAttribute('data-filter');
+
+              // Filter items
+              items.forEach(item => {
+                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                  item.style.display = 'block';
+                } else {
+                  item.style.display = 'none';
+                }
+              });
+            });
+          });
+
+          // Lightbox functionality
+          items.forEach(item => {
+            item.addEventListener('click', function() {
+              const img = this.querySelector('.gallery__img');
+              modal.style.display = 'block';
+              modalImg.src = img.src;
+              captionText.innerHTML = this.querySelector('.gallery__title').textContent;
+            });
+          });
+
+          // Close modal
+          closeBtn.onclick = function() {
+            modal.style.display = 'none';
+          };
+
+          // Close when clicking outside the image
+          window.onclick = function(event) {
+            if (event.target === modal) {
+              modal.style.display = 'none';
+            }
+          };
+        });
+      </script>
+
+      <style>
+        /* Gallery Section */
+        .gallery__container {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          gap: 1.5rem;
+          margin-top: 2rem;
+        }
+
+        .gallery__item {
+          position: relative;
+          border-radius: 1rem;
+          overflow: hidden;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          aspect-ratio: 1;
+        }
+        .gallery__item:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .gallery__img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          transition: transform 0.5s ease;
+        }
+        .gallery__item:hover .gallery__img {
+          transform: scale(1.05);
+        }
+        .gallery__overlay {
+          position: absolute;
+          bottom: -100%;
+          left: 0;
+          width: 100%;
+          padding: 1.5rem;
+          background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+          color: #fff;
+          transition: bottom 0.3s ease;
+        }
+        .gallery__item:hover .gallery__overlay {
+          bottom: 0;
+        }
+        .gallery__title {
+          margin: 0 0 0.5rem 0;
+          font-size: 1.2rem;
+        }
+        .gallery__description {
+          margin: 0;
+          font-size: 0.9rem;
+          opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+          .gallery__container {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          }
+        }
+      </style>
+      
+      <script>
+        // Simple lightbox functionality
+        document.addEventListener('DOMContentLoaded', function() {
+          const galleryItems = document.querySelectorAll('.gallery__item');
+          
+          galleryItems.forEach(item => {
+            item.addEventListener('click', function() {
+              const imgSrc = this.querySelector('img').src;
+              const imgTitle = this.querySelector('.gallery__title').textContent;
+              
+              // Create modal
+              const modal = document.createElement('div');
+              modal.style.position = 'fixed';
+              modal.style.top = '0';
+              modal.style.left = '0';
+              modal.style.width = '100%';
+              modal.style.height = '100%';
+              modal.style.backgroundColor = 'rgba(0,0,0,0.9)';
+              modal.style.zIndex = '1000';
+              modal.style.display = 'flex';
+              modal.style.justifyContent = 'center';
+              modal.style.alignItems = 'center';
+              
+              // Create image element
+              const img = document.createElement('img');
+              img.src = imgSrc;
+              img.style.maxWidth = '90%';
+              img.style.maxHeight = '90%';
+              img.style.borderRadius = '0.5rem';
+              
+              // Close button
+              const closeBtn = document.createElement('span');
+              closeBtn.innerHTML = '&times;';
+              closeBtn.style.position = 'absolute';
+              closeBtn.style.top = '20px';
+              closeBtn.style.right = '30px';
+              closeBtn.style.color = '#fff';
+              closeBtn.style.fontSize = '40px';
+              closeBtn.style.fontWeight = 'bold';
+              closeBtn.style.cursor = 'pointer';
+              
+              // Close modal function
+              function closeModal() {
+                document.body.removeChild(modal);
+              }
+              
+              closeBtn.addEventListener('click', closeModal);
+              modal.addEventListener('click', function(e) {
+                if (e.target === modal) closeModal();
+              });
+              
+              // Add elements to modal
+              modal.appendChild(img);
+              modal.appendChild(closeBtn);
+              
+              // Add modal to body
+              document.body.appendChild(modal);
+            });
+          });
+        });
+      </script>
+
+      <!--==================== BLOG ====================-->
+      <section class="blog section" id="blog">
+        <h2 class="section__title">My Blog</h2>
+        <span class="section__subtitle">Latest Articles</span>
+
+        <div class="blog__container container grid">
+          <!-- Blog posts will be dynamically inserted here by JavaScript -->
+          <div class="blog__loading">Loading blog posts...</div>
+        </div>
+      </section>
+
+      <!-- Blog Post Modal -->
+      <div class="blog__modal" id="blog-modal">
+        <div class="blog__modal-content">
+          <span class="blog__modal-close">&times;</span>
+          <h2 class="blog__modal-title">Blog Post Title</h2>
+          <div class="blog__modal-meta">
+            <span class="blog__modal-date">May 28, 2025</span>
+            <span class="blog__modal-category">Category</span>
+          </div>
+          <div class="blog__modal-body">
+            <!-- Blog post content will be inserted here -->
+          </div>
+        </div>
+      </div>
+      
       <!--===================== Contact Me =====================-->
       <section class="contact section" id="contact">
         <h2 class="section__title">Contact Me</h2>
@@ -756,6 +1569,7 @@
           </form>
         </div>
       </section>
+
     </main>
 
     <!--================== Footer ===============-->
@@ -771,7 +1585,7 @@
 
           <ul class="footer__links">
             <li>
-              <a href="#qualification" class="footer__link">Qualification</a>
+              <a href="#qualifications" class="footer__link">Qualifications</a>
             </li>
             <li>
               <a href="#portfolio" class="footer__link">Portfolio</a>
@@ -809,8 +1623,635 @@
       <i class="uil uil-arrow-up scrollup__icon"></i>
     </a>
 
-    <script type="text/javascript" src="assets/swiper-bundle.min.js"></script>
+    <!-- Social Sidebar -->
+    <div class="social-sidebar" style="position: fixed; right: 1.5rem; top: 50%; transform: translateY(-50%); z-index: var(--z-tooltip);">
+      <div class="social-sidebar__toggle">
+        <i class="uil uil-share-alt social-sidebar__toggle-icon"></i>
+        <i class="uil uil-times social-sidebar__close-icon"></i>
+      </div>
+      <div class="social-sidebar__content">
+        <div class="social-sidebar__header">
+          <h3 class="social-sidebar__title">Connect With Me</h3>
+          <p class="social-sidebar__subtitle">Let's get in touch!</p>
+        </div>
+        <div class="social-sidebar__links">
+          <a href="#" class="social-sidebar__link" target="_blank" rel="noopener noreferrer" title="GitHub">
+            <div class="social-sidebar__link-icon">
+              <i class="uil uil-github"></i>
+            </div>
+            <span class="social-sidebar__link-text">GitHub</span>
+          </a>
+          <a href="#" class="social-sidebar__link" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+            <div class="social-sidebar__link-icon">
+              <i class="uil uil-linkedin"></i>
+            </div>
+            <span class="social-sidebar__link-text">LinkedIn</span>
+          </a>
+          <a href="#" class="social-sidebar__link" target="_blank" rel="noopener noreferrer" title="Twitter">
+            <div class="social-sidebar__link-icon">
+              <i class="uil uil-twitter"></i>
+            </div>
+            <span class="social-sidebar__link-text">Twitter</span>
+          </a>
+          <a href="#" class="social-sidebar__link" target="_blank" rel="noopener noreferrer" title="Instagram">
+            <div class="social-sidebar__link-icon">
+              <i class="uil uil-instagram"></i>
+            </div>
+            <span class="social-sidebar__link-text">Instagram</span>
+          </a>
+          <a href="mailto:your.email@example.com" class="social-sidebar__link" title="Email">
+            <div class="social-sidebar__link-icon">
+              <i class="uil uil-envelope"></i>
+            </div>
+            <span class="social-sidebar__link-text">Email Me</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!--=============== SWIPER JS ===============-->
+    <script src="assets/swiper-bundle.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/main.js"></script>
+    
+    <!-- Facebook Updates Tabs -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Get all tab elements
+        const tabs = document.querySelectorAll('.facebook-updates__tab');
+        const panes = document.querySelectorAll('.facebook-updates__pane');
+        
+        // Add click event to each tab
+        tabs.forEach(tab => {
+          tab.addEventListener('click', () => {
+            // Remove active class from all tabs and panes
+            tabs.forEach(t => t.classList.remove('active'));
+            panes.forEach(p => p.classList.remove('active'));
+            
+            // Add active class to clicked tab and corresponding pane
+            tab.classList.add('active');
+            const targetId = tab.getAttribute('data-target');
+            document.querySelector(targetId).classList.add('active');
+          });
+        });
+      });
+    </script>
+    
+    <!-- CV Section Tabs -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // CV Tabs
+        const tabs = document.querySelectorAll('[data-target]');
+        const tabContents = document.querySelectorAll('[data-content]');
+        const tabButtons = document.querySelectorAll('.cv__button');
+        
+        // Function to switch tabs
+        function switchTab(targetId) {
+          // Hide all tab contents
+          tabContents.forEach(content => {
+            content.classList.remove('cv__active');
+          });
+          
+          // Remove active class from all buttons
+          tabButtons.forEach(button => {
+            button.classList.remove('cv__active');
+          });
+          
+          // Show the selected tab content
+          document.querySelector(targetId).classList.add('cv__active');
+          
+          // Add active class to the clicked button
+          document.querySelector(`[data-target="${targetId}"]`).classList.add('cv__active');
+        }
+        
+        // Add click event listeners to tab buttons
+        tabButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const target = button.getAttribute('data-target');
+            switchTab(target);
+          });
+        });
+        
+        // Initialize with the first tab active
+        if (tabButtons.length > 0) {
+          const firstTabId = tabButtons[0].getAttribute('data-target');
+          switchTab(firstTabId);
+        }
+      });
+    </script>
     <script src="https://kit.fontawesome.com/2205d59d52.js" crossorigin="anonymous"></script>
     <script src="assets/ptj.js"></script>
+    <script src="assets/js/navigation.js"></script>
+    <script src="assets/js/social-sidebar.js"></script>
+    <script src="assets/js/scroll-progress.js"></script>
+    <script src="assets/js/blog.js"></script>
+    
+    <style>
+    /* Welcome Page Styles */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+    
+    @keyframes gradientBG {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    
+    .welcome-page {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1a1a2e);
+        background-size: 400% 400%;
+        animation: gradientBG 12s ease infinite;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        overflow: hidden;
+        font-family: 'Poppins', sans-serif;
+        perspective: 1000px;
+    }
+    
+    .welcome-content {
+        text-align: center;
+        color: #fff;
+        z-index: 2;
+        padding: 2rem;
+        position: relative;
+        transform-style: preserve-3d;
+    }
+    
+    .welcome-content::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0) 70%);
+        opacity: 0;
+        animation: pulse 8s infinite;
+        pointer-events: none;
+    }
+    
+    .welcome-title-wrapper {
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+        padding: 1rem 0;
+    }
+    
+    .welcome-title-wrapper {
+        margin-bottom: 2rem;
+        font-size: 4rem;
+        font-weight: 700;
+        perspective: 1000px;
+        text-align: center;
+        position: relative;
+        display: inline-block;
+        padding: 1rem 0;
+    }
+    
+    .welcome-title-wrapper::before,
+    .welcome-title-wrapper::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #00dbde, transparent);
+        transform: scaleX(0);
+        transition: transform 0.6s ease-out;
+    }
+    
+    .welcome-title-wrapper::before {
+        top: 0;
+        transform-origin: left;
+        animation: lineReveal 1s 0.5s forwards;
+    }
+    
+    .welcome-title-wrapper::after {
+        bottom: 0;
+        transform-origin: right;
+        animation: lineReveal 1s 0.8s forwards;
+    }
+    
+    .welcome-title-letter {
+        display: inline-block;
+        position: relative;
+        transform-style: preserve-3d;
+        transform-origin: bottom center;
+        margin: 0 2px;
+        transition: transform 0.3s ease, text-shadow 0.3s ease;
+        animation: float 3s ease-in-out infinite;
+        color: transparent;
+        background: linear-gradient(45deg, #00dbde, #fc00ff, #00dbde);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        animation: 
+            letterReveal 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards,
+            float 3s ease-in-out infinite 1s;
+        transform: translateY(30px) rotateX(-90deg);
+    }
+    
+    .welcome-title-letter:nth-child(1) { animation-delay: 0.3s; }
+    .welcome-title-letter:nth-child(2) { animation-delay: 0.35s; }
+    .welcome-title-letter:nth-child(3) { animation-delay: 0.4s; }
+    .welcome-title-letter:nth-child(4) { animation-delay: 0.45s; }
+    .welcome-title-letter:nth-child(5) { animation-delay: 0.5s; }
+    .welcome-title-letter:nth-child(6) { animation-delay: 0.55s; }
+    .welcome-title-letter:nth-child(7) { animation-delay: 0.6s; }
+    
+    .welcome-title-letter::before,
+    .welcome-title-letter::after {
+        content: attr(data-letter);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: inherit;
+        -webkit-background-clip: inherit;
+        background-clip: inherit;
+        -webkit-text-fill-color: inherit;
+    }
+    
+    .welcome-title-letter::before {
+        transform: translateZ(0.5em);
+        filter: brightness(1.2);
+    }
+    
+    .welcome-title-letter::after {
+        transform: rotateX(90deg) translateZ(1em);
+        filter: brightness(0.8);
+    }
+    
+    .welcome-subtitle {
+        font-size: 1.5rem;
+        margin: 3rem 0;
+        color: #e0e0e0;
+        opacity: 0;
+        position: relative;
+        display: inline-block;
+        animation: fadeInUp 0.8s ease-out forwards 1.5s;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .welcome-subtitle-text {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .welcome-subtitle-text::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background: linear-gradient(90deg, #00dbde, #fc00ff);
+        animation: underline 1s ease-out forwards 1.5s;
+    }
+    
+    .welcome-loader {
+        width: 300px;
+        height: 6px;
+        background: rgba(255, 255, 255, 0.1);
+        margin: 3rem auto;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        opacity: 0;
+        transform: scaleX(0.8);
+        animation: 
+            fadeIn 0.8s ease-out forwards 1.2s,
+            scaleIn 0.5s ease-out 1.2s forwards;
+        box-shadow: 0 0 15px rgba(0, 219, 222, 0.2);
+    }
+    
+    .loader-bar {
+        height: 100%;
+        width: 0;
+        background: linear-gradient(90deg, #00dbde, #fc00ff, #00dbde);
+        background-size: 200% auto;
+        position: relative;
+        border-radius: 10px;
+        animation: gradient 3s linear infinite;
+        box-shadow: 0 0 10px rgba(0, 219, 222, 0.5);
+        transition: width 0.3s ease-out;
+    }
+    
+    .loader-percentage {
+        position: absolute;
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        font-size: 0.9rem;
+        font-weight: 600;
+        opacity: 0;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        animation: fadeIn 0.5s ease-out 0.5s forwards;
+    }
+    
+    /* Scroll indicator styles removed as per user request */
+    
+    .welcome-particles {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    
+    @keyframes letterReveal {
+        to {
+            opacity: 1;
+            transform: translateY(0) rotateX(0);
+        }
+    }
+    
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0) rotateX(0);
+        }
+        50% {
+            transform: translateY(-10px) rotateX(5deg);
+            text-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+        }
+    }
+    
+    @keyframes lineReveal {
+        to {
+            transform: scaleX(1);
+        }
+    }
+    
+    @keyframes pulse {
+        0%, 100% {
+            opacity: 0.3;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.1;
+            transform: scale(1.1);
+        }
+    }
+    
+    @keyframes scaleIn {
+        to {
+            transform: scaleX(1);
+        }
+    }
+    
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes fadeIn {
+        to { 
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    
+    @keyframes underline {
+        to { width: 100%; }
+    }
+    
+    .welcome-page.hidden {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+    }
+    </style>
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+    // Initialize welcome page effects
+    document.addEventListener('DOMContentLoaded', function() {
+        const welcomePage = document.getElementById('welcomePage');
+        if (!welcomePage) return;
+        
+        const welcomeTitle = document.querySelector('.welcome-title-wrapper');
+        const loaderBar = document.querySelector('.loader-bar');
+        const loaderPercentage = document.querySelector('.loader-percentage');
+        let width = 0;
+        
+        // Initialize particles if available
+        if (typeof particlesJS !== 'undefined') {
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 80, density: { enable: true, value_area: 800 } },
+                    color: { value: '#ffffff' },
+                    shape: { type: 'circle' },
+                    opacity: { value: 0.5, random: true },
+                    size: { value: 3, random: true },
+                    line_linked: { enable: true, distance: 150, color: '#ffffff', opacity: 0.2, width: 1 },
+                    move: { enable: true, speed: 2, direction: 'none', random: false, straight: false, out_mode: 'out' }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: {
+                        onhover: { enable: true, mode: 'grab' },
+                        onclick: { enable: true, mode: 'push' },
+                        resize: true
+                    }
+                },
+                retina_detect: true
+            });
+        }
+        
+        // Loading animation
+        const interval = setInterval(() => {
+            width += 1;
+            loaderBar.style.width = `${width}%`;
+            loaderPercentage.textContent = `${width}%`;
+            
+            if (width >= 100) {
+                clearInterval(interval);
+                welcomePage.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+                
+                // Remove welcome page after transition
+                setTimeout(() => {
+                    welcomePage.remove();
+                }, 1000);
+            }
+        }, 30);
+        
+        // 3D title effect
+        if (welcomeTitle) {
+            document.addEventListener('mousemove', (e) => {
+                const { left, top, width, height } = welcomeTitle.getBoundingClientRect();
+                const x = (e.clientX - left) / width - 0.5;
+                const y = (e.clientY - top) / height - 0.5;
+                
+                welcomeTitle.style.transform = `perspective(1000px) rotateY(${x * 10}deg) rotateX(${y * -10}deg)`;
+                
+                document.querySelectorAll('.welcome-title-letter').forEach((letter, index) => {
+                    const speed = (index + 1) * 0.03;
+                    const xPos = x * 15 * speed;
+                    const yPos = y * 15 * speed;
+                    letter.style.transform = `translate3d(${xPos}px, ${yPos}px, ${Math.abs(x * 30)}px)`;
+                });
+            });
+            
+            welcomeTitle.addEventListener('mouseleave', () => {
+                welcomeTitle.style.transform = 'perspective(1000px) rotateY(0) rotateX(0)';
+                document.querySelectorAll('.welcome-title-letter').forEach(letter => {
+                    letter.style.transform = 'translate3d(0, 0, 0)';
+                });
+            });
+        }
+    });
+    
+    // Welcome page animation and transition
+    document.addEventListener('DOMContentLoaded', function() {
+        const welcomePage = document.getElementById('welcomePage');
+        if (!welcomePage) return;
+        
+        const loaderBar = document.querySelector('.loader-bar');
+        const loaderPercentage = document.querySelector('.loader-percentage');
+        let width = 0;
+        
+        // Initialize particles.js
+        if (typeof particlesJS !== 'undefined') {
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 80, density: { enable: true, value_area: 800 } },
+                    color: { value: '#ffffff' },
+                    shape: { type: 'circle' },
+                    opacity: { value: 0.5, random: true },
+                    size: { value: 3, random: true },
+                    line_linked: { enable: true, distance: 150, color: '#ffffff', opacity: 0.2, width: 1 },
+                    move: { enable: true, speed: 2, direction: 'none', random: true, straight: false, out_mode: 'out' }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: {
+                        onhover: { enable: true, mode: 'repulse' },
+                        onclick: { enable: true, mode: 'push' },
+                        resize: true
+                    }
+                },
+                retina_detect: true
+            });
+        }
+        
+        // Animate loader bar
+        const animateLoader = () => {
+            if (width >= 100) {
+                clearInterval(interval);
+                return;
+            }
+            width++;
+            loaderBar.style.width = width + '%';
+            loaderPercentage.textContent = width + '%';
+        };
+        
+        const interval = setInterval(animateLoader, 30);
+        
+        // Hide welcome page after animation completes
+        setTimeout(() => {
+            welcomePage.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            
+            // Remove welcome page from DOM after transition
+            setTimeout(() => {
+                welcomePage.remove();
+                // No scroll indicator added to home section as per user request
+            }, 1000);
+        }, 5000);
+        
+        // Function to handle loader animation
+    function updateLoader() {
+        if (width < 100) {
+            width += 0.5;
+            loaderBar.style.width = width + '%';
+            loaderPercentage.textContent = Math.round(width) + '%';
+            requestAnimationFrame(updateLoader);
+        }
+    }
+    
+    // Start loader animation
+    setTimeout(() => {
+        updateLoader();
+    }, 500);
+    });
+    </script>
+
+    <!-- Hobbies Modal -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Get all modal buttons and modals
+        const modalButtons = document.querySelectorAll('.hobbies__button');
+        const modalCloses = document.querySelectorAll('.hobbies__modal-close');
+        const modals = document.querySelectorAll('.hobbies__modal');
+
+        // Add click event to each button
+        modalButtons.forEach((button, index) => {
+          button.addEventListener('click', () => {
+            // Hide all modals first
+            modals.forEach(modal => {
+              modal.classList.remove('active-modal');
+            });
+            // Show the clicked modal
+            modals[index].classList.add('active-modal');
+            // Prevent body scroll when modal is open
+            document.body.style.overflow = 'hidden';
+          });
+        });
+
+        // Close modal when clicking the close button
+        modalCloses.forEach(close => {
+          close.addEventListener('click', () => {
+            const modal = close.closest('.hobbies__modal');
+            modal.classList.remove('active-modal');
+            document.body.style.overflow = 'auto';
+          });
+        });
+
+
+        // Close modal when clicking outside the modal content
+        modals.forEach(modal => {
+          modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+              modal.classList.remove('active-modal');
+              document.body.style.overflow = 'auto';
+            }
+          });
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            modals.forEach(modal => {
+              if (modal.classList.contains('active-modal')) {
+                modal.classList.remove('active-modal');
+                document.body.style.overflow = 'auto';
+              }
+            });
+          }
+        });
+      });
+    </script>
   </body>
 </html>

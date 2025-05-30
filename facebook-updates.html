@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facebook Updates - AyuSH K</title>
+    <link rel="stylesheet" href="assets/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/newcss.css" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://yourwebsite.com/facebook-updates.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Facebook Updates - AyuSH K" />
+    <meta property="og:description" content="Stay updated with my latest Facebook posts and activities" />
+    <meta property="og:image" content="https://yourwebsite.com/assets/img/your-profile-image.jpg" />
+    
+    <style>
+      /* Facebook Updates Section */
+      .facebook-updates {
+        padding: 5rem 0 3rem;
+      }
+      
+      .facebook-updates__container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+      
+      .facebook-updates__header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+      
+      .section__title {
+        font-size: var(--h1-font-size);
+        color: var(--title-color);
+        margin-bottom: 0.5rem;
+      }
+      
+      .section__subtitle {
+        display: block;
+        font-size: var(--small-font-size);
+        color: var(--text-color-light);
+        margin-bottom: 2.5rem;
+      }
+      
+      /* Facebook Embed Container */
+      .facebook-embed {
+        margin: 0 auto 4rem;
+        background: var(--container-color);
+        padding: 2rem;
+        border-radius: 1.5rem;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s ease;
+        max-width: 100%;
+        overflow: hidden;
+      }
+      
+      .facebook-embed:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+      }
+      
+      .facebook-embed h3 {
+        color: var(--title-color);
+        font-size: 1.75rem;
+        margin: 0 0 1.5rem 0;
+        padding-bottom: 0.75rem;
+        position: relative;
+        display: inline-block;
+      }
+      
+      .facebook-embed h3::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 3px;
+        background: var(--first-color);
+        border-radius: 3px;
+      }
+      
+      /* Facebook Feed Styling */
+      .facebook-embed__content {
+        position: relative;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .fb-page {
+        background: transparent !important;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        margin: 0;
+        min-height: 600px;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center;
+        align-items: flex-start;
+      }
+      
+      .fb-page,
+      .fb-page span,
+      .fb-page iframe {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        transform: none !important;
+      }
+      
+      /* Custom scrollbar for the feed */
+      .fb-page::-webkit-scrollbar {
+        width: 8px;
+      }
+      
+      .fb-page::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 4px;
+      }
+      
+      .fb-page::-webkit-scrollbar-thumb {
+        background: var(--first-color);
+        border-radius: 4px;
+      }
+      
+      .fb-page::-webkit-scrollbar-thumb:hover {
+        background: var(--first-color-alt);
+      }
+      
+      /* Back to Blog Link */
+      .back-to-blog {
+        display: inline-flex;
+        align-items: center;
+        margin: 2rem auto 0;
+        padding: 0.75rem 1.5rem;
+        color: var(--title-color);
+        background: var(--container-color);
+        border-radius: 2rem;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        border: 1px solid var(--first-color);
+      }
+      
+      .back-to-blog i {
+        margin-right: 0.5rem;
+        transition: transform 0.3s;
+      }
+      
+      .back-to-blog:hover {
+        background: var(--first-color);
+        color: #fff;
+        transform: translateY(-2px);
+      }
+      
+      .back-to-blog:hover i {
+        transform: translateX(-3px);
+      }
+      
+      /* Responsive Adjustments */
+      @media (max-width: 992px) {
+        .facebook-embed {
+          padding: 1.5rem;
+        }
+        
+        .facebook-embed h3 {
+          font-size: 1.5rem;
+        }
+        
+        .facebook-embed__content {
+          max-width: 100%;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .facebook-updates {
+          padding: 2.5rem 0;
+        }
+        
+        .facebook-embed {
+          padding: 1.25rem;
+          margin-bottom: 2.5rem;
+          border-radius: 1rem;
+        }
+        
+        .facebook-embed h3 {
+          font-size: 1.4rem;
+          margin-bottom: 1.25rem;
+        }
+        
+        .fb-page {
+          min-height: 500px;
+        }
+      }
+      
+      @media (max-width: 576px) {
+        .facebook-updates {
+          padding: 2rem 0;
+        }
+        
+        .facebook-updates__container {
+          padding: 0 1rem;
+        }
+        
+        .section__title {
+          font-size: 1.6rem;
+        }
+        
+        .facebook-embed {
+          padding: 1rem;
+          border-radius: 0.75rem;
+        }
+        
+        .facebook-embed h3 {
+          font-size: 1.3rem;
+          margin-bottom: 1rem;
+        }
+        
+        .back-to-blog {
+          padding: 0.6rem 1.2rem;
+          font-size: 0.9rem;
+        }
+        
+        .fb-page {
+          min-height: 450px;
+        }
+      }
+      
+      @media (max-width: 400px) {
+        .facebook-embed h3 {
+          font-size: 1.25rem;
+        }
+        
+        .section__title {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body oncontextmenu="return false">
+    <!-- Progress Bar -->
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="index.html" class="nav__logo">AyuSHK</a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list grid">
+            <li class="nav__item">
+              <a href="index.html#home" class="nav__link">
+                <i class="uil uil-estate nav__icon"></i>Home
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="index.html#about" class="nav__link">
+                <i class="uil uil-user nav__icon"></i>About
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="index.html#hobbies" class="nav__link">
+                <i class="uil uil-heart nav__icon"></i>Hobbies
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="index.html#skills" class="nav__link">
+                <i class="uil uil-file-alt nav__icon"></i>Skills
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="index.html#qualification" class="nav__link">
+                <i class="uil uil-briefcase-alt nav__icon"></i>Qualifications
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="index.html#portfolio" class="nav__link">
+                <i class="uil uil-scenery nav__icon"></i>Projects
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="index.html#gallery" class="nav__link">
+                <i class="uil uil-images nav__icon"></i>Gallery
+              </a>
+            </li>
+            <li class="nav__item nav__dropdown">
+              <a href="#" class="nav__link active-link">
+                <i class="uil uil-document-layout-left nav__icon"></i>Blog
+              </a>
+              <ul class="nav__dropdown-menu">
+                <li class="nav__dropdown-item">
+                  <a href="index.html#blog" class="nav__dropdown-link">All Posts</a>
+                </li>
+                <li class="nav__dropdown-item">
+                  <a href="#" class="nav__dropdown-link active">Facebook Updates</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav__item">
+              <a href="index.html#contact" class="nav__link">
+                <i class="uil uil-message nav__icon"></i>Contact-Me
+              </a>
+            </li>
+          </ul>
+          <i class="uil uil-times nav__close" id="nav-close"></i>
+        </div>
+        <div class="nav__btns">
+          <!-- Theme change button -->
+          <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="uil uil-apps"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main">
+      <!-- Facebook Updates Section -->
+      <section class="facebook-updates section" id="facebook-updates">
+        <div class="facebook-updates__container">
+          <div class="facebook-updates__header">
+            <h2 class="section__title">Facebook Updates</h2>
+            <span class="section__subtitle">Stay connected with my latest posts, thoughts, and activities</span>
+          </div>
+          
+          <!-- Introduction Section -->
+          <div class="intro-section" style="margin-bottom: 3rem; text-align: center;">
+
+            <div class="social-cta" style="margin-bottom: 2rem;">
+              <a href="https://www.facebook.com/ayush.kuikel" target="_blank" class="button button--flex" style="margin: 0 auto;">
+                <i class="uil uil-facebook" style="margin-right: 0.5rem;"></i> Follow Me on Facebook
+              </a>
+            </div>
+
+          </div>
+          
+          <!-- Facebook Feed Section -->
+          <div class="feed-section" style="margin-top: 3rem; text-align: center;">
+            <h3 style="font-size: 1.5rem; color: var(--title-color); margin-bottom: 2rem; position: relative; display: inline-block;">
+              <i class="uil uil-newspaper" style="margin-right: 0.5rem; color: var(--first-color);"></i>
+              Latest Updates
+              <span style="position: absolute; bottom: -10px; left: 0; width: 50px; height: 3px; background: var(--first-color); border-radius: 3px;"></span>
+            </h3>
+            <p style="color: var(--text-color-light); margin-bottom: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+              Scroll through my latest Facebook posts below. You can interact with them just like you would on Facebook.
+              Don't forget to follow my page for more updates!
+            </p>
+          </div>
+          
+          <!-- Facebook Page Plugin -->
+          <div class="facebook-embed">
+            <h3>My Facebook Page</h3>
+            <div class="facebook-embed__content">
+              <div class="fb-page" 
+                data-href="https://www.facebook.com/ayush.kuikel" 
+                data-tabs="timeline" 
+                data-width="500" 
+                data-height="800" 
+                data-small-header="false" 
+                data-adapt-container-width="true" 
+                data-hide-cover="false" 
+                data-show-facepile="true">
+                <blockquote cite="https://www.facebook.com/ayush.kuikel" class="fb-xfbml-parse-ignore">
+                  <a href="https://www.facebook.com/ayush.kuikel">AyuSH K</a>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+          
+
+          
+          <a href="index.html#blog" class="back-to-blog" style="display: block; text-align: center; margin-top: 2rem;">
+            <i class="uil uil-arrow-left"></i>Back to Blog
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer__bg">
+        <div class="footer__container container grid">
+          <div>
+            <h1 class="footer__title">AyuSH</h1>
+            <span class="footer__subtitle">Computer Science Student</span>
+          </div>
+          <ul class="footer__links">
+            <li>
+              <a href="#services" class="footer__link">Services</a>
+            </li>
+            <li>
+              <a href="#portfolio" class="footer__link">Portfolio</a>
+            </li>
+            <li>
+              <a href="#contact" class="footer__link">Contact</a>
+            </li>
+          </ul>
+          <div class="footer__socials">
+            <a href="https://www.facebook.com/ayush.kuikel" target="_blank" class="footer__social">
+              <i class="uil uil-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/ayushkuikel/" target="_blank" class="footer__social">
+              <i class="uil uil-instagram"></i>
+            </a>
+            <a href="https://twitter.com/ayushkuikel" target="_blank" class="footer__social">
+              <i class="uil uil-twitter-alt"></i>
+            </a>
+          </div>
+        </div>
+        <p class="footer__copy">© 2023 AyuSH K. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Scroll Top -->
+    <a href="#" class="scrollup" id="scroll-up">
+      <i class="uil uil-arrow-up scrollup__icon"></i>
+    </a>
+
+    <!-- Main JS -->
+    <script src="assets/swiper-bundle.min.js"></script>
+    <script src="assets/main.js"></script>
+    
+    <!-- Facebook SDK -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" 
+      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0" 
+      nonce="RANDOM_NONCE">
+    </script>
+    
+    <script>
+      // Facebook SDK initialization with error handling
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml: true,
+          version: 'v17.0'
+        });
+        
+        // Optional: Log when SDK is loaded
+        console.log('Facebook SDK initialized');
+      };
+      
+      // Error handling for Facebook SDK
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+      
+      // Theme toggle functionality
+      const themeButton = document.getElementById('theme-button');
+      const darkTheme = 'dark-theme';
+      const iconTheme = 'uil-sun';
+      
+      // Previously selected topic (if user selected)
+      const selectedTheme = localStorage.getItem('selected-theme');
+      const selectedIcon = localStorage.getItem('selected-icon');
+      
+      // We obtain the current theme that the interface has by validating the dark-theme class
+      const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light';
+      const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun';
+      
+      // We validate if the user previously chose a topic
+      if (selectedTheme) {
+        // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
+        document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+        themeButton.classList[selectedIcon === 'uil-moon' ? 'add' : 'remove'](iconTheme);
+      }
+      
+      // Activate / deactivate the theme manually with the button
+      themeButton.addEventListener('click', () => {
+        // Add or remove the dark / icon theme
+        document.body.classList.toggle(darkTheme);
+        themeButton.classList.toggle(iconTheme);
+        // We save the theme and the current icon that the user chose
+        localStorage.setItem('selected-theme', getCurrentTheme());
+        localStorage.setItem('selected-icon', getCurrentIcon());
+      });
+      
+      // Navigation toggle for mobile
+      const navMenu = document.getElementById('nav-menu');
+      const navToggle = document.getElementById('nav-toggle');
+      const navClose = document.getElementById('nav-close');
+      
+      if (navToggle) {
+        navToggle.addEventListener('click', () => {
+          navMenu.classList.add('show-menu');
+        });
+      }
+      
+      if (navClose) {
+        navClose.addEventListener('click', () => {
+          navMenu.classList.remove('show-menu');
+        });
+      }
+      
+      // Close menu when clicking on a nav link
+      const navLinks = document.querySelectorAll('.nav__link');
+      
+      const linkAction = () => {
+        const navMenu = document.getElementById('nav-menu');
+        // When we click on each nav__link, we remove the show-menu class
+        navMenu.classList.remove('show-menu');
+      };
+      
+      navLinks.forEach(navLink => navLink.addEventListener('click', linkAction));
+    </script>
+  </body>
+</html>
