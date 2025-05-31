@@ -1,0 +1,9 @@
+  background-size: 1200% 1200%;
+  animation: gradientBG 18s ease infinite, growBG 8s ease-in-out infinite;
+}
+
+@keyframes growBG {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}

@@ -3,29 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="MobileOptimized" content="width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>AyuSH K</title>
-    <link rel="stylesheet" href="assets/swiper-bundle.min.css" />
+    <!-- Main CSS -->
     <link rel="stylesheet" href="assets/newcss.css" />
-    <link
-      rel="stylesheet"
-      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
-    />
-    <!-- Moved styles to external CSS file -->
+    <link rel="stylesheet" href="assets/css/welcome.css" />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="assets/theme.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+    
+    <!-- Inline Critical CSS -->
+    <style>
+      /* Critical styles for initial render */
+      .cursor {
+        display: inline-block;
+        width: 2px;
+        background-color: var(--title-color);
+        animation: blink 0.7s infinite;
+        margin-left: 2px;
+        height: 1em;
+      }
 
       @keyframes blink {
-        0%, 50%, 100% {
-          opacity: 1;
-        }
-        25%, 75% {
-          opacity: 0;
-        }
+        0%, 50%, 100% { opacity: 1; }
+        25%, 75% { opacity: 0; }
+      }
+      
+      /* Hide content until fonts are loaded */
+      .wf-loading * {
+        visibility: hidden;
       }
     </style>
   </head>
 
-  <body>
-    oncontextmenu="return false">
+  <body oncontextmenu="return false">
     <!-- Welcome Page -->
     <div class="welcome-page" id="welcomePage">
         <!-- Dynamic Background Elements -->
@@ -67,16 +85,7 @@
     <header class="header" id="header">
       <nav class="nav container">
         <a href="#" class="nav__logo">AyuSHK</a>
-        
-        <!-- Mobile menu toggle -->
-        <div class="nav__toggle" id="nav-toggle">
-          <i class="uil uil-bars"></i>
-        </div>
-        
         <div class="nav__menu" id="nav-menu">
-          <div class="nav__close" id="nav-close">
-            <i class="uil uil-times"></i>
-         </div>
           <ul class="nav__list grid">
             <li class="nav__item">
               <a href="#home" class="nav__link active-link">
@@ -135,13 +144,15 @@
               </a>
             </li>
           </ul>
-
+          <i class="uil uil-times nav__close" id="nav-close"></i>
         </div>
         <div class="nav__btns">
           <!-- Theme change button -->
           <i class="uil uil-moon change-theme" id="theme-button"></i>
 
-
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="uil uil-apps"></i>
+          </div>
         </div>
       </nav>
     </header>
@@ -761,141 +772,126 @@
         <h2 class="section__title">Projects</h2>
         <span class="section__subtitle">Most recent work</span>
 
-        <div class="portfolio__container container swiper-container">
-          <div class="swiper-wrapper">
-            <!-- ------------------------portfollio 1-------------------- -->
-            <div class="portfolio__content grid swiper-slide">
-              <img src="assets/img/portfolio1.png" class="portfolio__img" />
+        <div class="container">
+          <div class="portfolio__container swiper">
+            <div class="swiper-wrapper">
+              <!-- Project 1 -->
+              <div class="portfolio__content swiper-slide">
+                <img src="assets/img/portfolio1.png" alt="Weather App" class="portfolio__img">
+                <div class="portfolio__data">
+                  <h3 class="portfolio__title">Weather Forecast Website</h3>
+                  <p class="portfolio__description">
+                    A responsive weather website that provides live weather updates and forecasts based on your location. 
+                    Features current conditions, hourly/daily forecasts, and interactive maps.
+                  </p>
+                  <div class="portfolio__buttons">
+                    <a href="https://github.com/Venkateeshh/Weather-App" 
+                       class="button button--flex button--small portfolio__button"
+                       target="_blank" rel="noopener noreferrer">
+                      GitHub
+                      <i class="uil uil-external-link-alt button__icon"></i>
+                    </a>
+                    <a href="https://venkateeshh.github.io/Weather-App/" 
+                       class="button button--flex button--small portfolio__button"
+                       target="_blank" rel="noopener noreferrer">
+                      Live Demo
+                      <i class="uil uil-external-link-alt button__icon"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
 
-              <div class="portfolio__data">
-                <h3 class="portfolio__title">
-                  Responsive-Weather-Forecast-Website
-                </h3>
-                <p class="portfolio__description">
-                  This project is a weather website that provides live weather
-                  updates and forecasts based on your location. Stay informed
-                  about current weather conditions, temperature, and more.
-                  Explore interactive maps, hourly/daily forecasts, and helpful
-                  insights. Stay ahead of the forecast and make the most of your
-                  day!
-                </p>
-                <a
-                  href="https://github.com/Venkateeshh/Weather-App"
-                  class="button button--flex button--small portfolio__button"
-                >
-                  GitHub Repository
-                  <i class="uil uil-external-link-alt button__icon"></i>
-                </a>
-                <a
-                  href="https://venkateeshh.github.io/Weather-App/"
-                  class="button button--flex button--small portfolio__button"
-                >
-                  See Live
-                  <i class="uil uil-external-link-alt button__icon"></i>
-                </a>
+              <!-- Project 2 -->
+              <div class="portfolio__content swiper-slide">
+                <img src="assets/img/portfolio2.png" alt="Spotify Clone" class="portfolio__img">
+                <div class="portfolio__data">
+                  <h3 class="portfolio__title">Spotify Clone</h3>
+                  <p class="portfolio__description">
+                    A web application that recreates Spotify's interface with features like music playback, 
+                    playlist creation, and song search. Built with HTML, CSS, and JavaScript.
+                  </p>
+                  <div class="portfolio__buttons">
+                    <a href="https://github.com/Venkateeshh/Spotify-Clone" 
+                       class="button button--flex button--small portfolio__button"
+                       target="_blank" rel="noopener noreferrer">
+                      GitHub
+                      <i class="uil uil-external-link-alt button__icon"></i>
+                    </a>
+                    <a href="https://venkateeshh.github.io/Spotify-Clone/" 
+                       class="button button--flex button--small portfolio__button"
+                       target="_blank" rel="noopener noreferrer">
+                      Live Demo
+                      <i class="uil uil-external-link-alt button__icon"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 3 -->
+              <div class="portfolio__content swiper-slide">
+                <img src="assets/img/portfolio3.png" alt="Language Translator" class="portfolio__img">
+                <div class="portfolio__data">
+                  <h3 class="portfolio__title">Language Translator</h3>
+                  <p class="portfolio__description">
+                    A user-friendly web application that translates text between multiple languages 
+                    using the Google Translate API. Features a clean, responsive interface.
+                  </p>
+                  <div class="portfolio__buttons">
+                    <a href="https://github.com/Venkateeshh/Js-Language-Translator" 
+                       class="button button--flex button--small portfolio__button"
+                       target="_blank" rel="noopener noreferrer">
+                      GitHub
+                      <i class="uil uil-external-link-alt button__icon"></i>
+                    </a>
+                    <a href="https://venkateeshh.github.io/Js-Language-Translator/" 
+                       class="button button--flex button--small portfolio__button"
+                       target="_blank" rel="noopener noreferrer">
+                      Live Demo
+                      <i class="uil uil-external-link-alt button__icon"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 4 -->
+              <div class="portfolio__content swiper-slide">
+                <img src="assets/img/portfolio4.png" alt="Sorting Visualizer" class="portfolio__img">
+                <div class="portfolio__data">
+                  <h3 class="portfolio__title">Sorting Visualizer</h3>
+                  <p class="portfolio__description">
+                    A Java application that visually demonstrates various sorting algorithms 
+                    through an interactive GUI. Helps in understanding how different sorting 
+                    algorithms work in practice.
+                  </p>
+                  <div class="portfolio__buttons">
+                    <a href="https://github.com/Venkateeshh/Sorting-Visualizer" 
+                       class="button button--flex button--small portfolio__button"
+                       target="_blank" rel="noopener noreferrer">
+                      GitHub
+                      <i class="uil uil-external-link-alt button__icon"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/posts/venkatesh-kamath-_algorithmdesign-sortingvisualizer-javaprojects-activity-7095437035125043200-fWDl" 
+                       class="button button--flex button--small portfolio__button"
+                       target="_blank" rel="noopener noreferrer">
+                      Demo Video
+                      <i class="uil uil-external-link-alt button__icon"></i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <!-- ------------------------portfollio 2-------------------- -->
-            <div class="portfolio__content grid swiper-slide">
-              <img src="assets/img/portfolio2.png" class="portfolio__img" />
-
-              <div class="portfolio__data">
-                <h3 class="portfolio__title">Spotify-Clone</h3>
-                <p class="portfolio__description">
-                  Spotify Clone is a web app developed using HTML, CSS, and
-                  JavaScript. It recreates Spotify's interface and features,
-                  allowing users to browse, search, and play songs, create
-                  playlists, and discover new music. Responsive design ensures a
-                  seamless experience on any device. Contributions are welcome!
-                </p>
-                <a
-                  href="https://github.com/Venkateeshh/Spotify-Clone"
-                  class="button button--flex button--small portfolio__button"
-                >
-                  GitHub Repository
-                  <i class="uil uil-external-link-alt button__icon"></i>
-                </a>
-                <a
-                  href="https://venkateeshh.github.io/Spotify-Clone/"
-                  class="button button--flex button--small portfolio__button"
-                >
-                  See Live
-                  <i class="uil uil-external-link-alt button__icon"></i>
-                </a>
-              </div>
+            <!-- Navigation buttons -->
+            <div class="swiper-button-next">
+              <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
             </div>
-            <!-- ------------------------portfollio 3-------------------- -->
-            <div class="portfolio__content grid swiper-slide">
-              <img src="assets/img/portfolio3.png" class="portfolio__img" />
-
-              <div class="portfolio__data">
-                <h3 class="portfolio__title">Language Translator</h3>
-                <p class="portfolio__description">
-                  This language translator web app is a user-friendly tool built
-                  with HTML, CSS, and JavaScript. It leverages Google Translate
-                  API to seamlessly translate text between multiple languages.
-                  The app features a simple interface, ensuring smooth
-                  performance across devices..
-                </p>
-                <a
-                  href="https://github.com/Venkateeshh/Js-Language-Translator"
-                  class="button button--flex button--small portfolio__button"
-                >
-                  GitHub Repository
-                  <i class="uil uil-external-link-alt button__icon"></i>
-                </a>
-                <a
-                  href="https://venkateeshh.github.io/Js-Language-Translator/"
-                  class="button button--flex button--small portfolio__button"
-                >
-                  See Live
-                  <i class="uil uil-external-link-alt button__icon"></i>
-                </a>
-              </div>
+            <div class="swiper-button-prev">
+              <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
             </div>
 
-            <!-- ------------------------portfollio 4-------------------- -->
-            <div class="portfolio__content grid swiper-slide">
-              <img src="assets/img/portfolio4.png" class="portfolio__img" />
-
-              <div class="portfolio__data">
-                <h3 class="portfolio__title">Sorting Visualizer</h3>
-                <p class="portfolio__description">
-                  Sorting Visualizer is a Java-based project that allows users
-                  to visualize various sorting algorithms in action using a
-                  Graphical User Interface (GUI). It provides an interactive and
-                  educational way to understand how different sorting algorithms
-                  work by visually demonstrating their step-by-step sorting
-                  process.
-                </p>
-                <a
-                  href="https://github.com/Venkateeshh/Sorting-Visualizer"
-                  class="button button--flex button--small portfolio__button"
-                >
-                  GitHub Repository
-                  <i class="uil uil-external-link-alt button__icon"></i>
-                </a>
-                <a
-                  href="https://www.linkedin.com/posts/venkatesh-kamath-_algorithmdesign-sortingvisualizer-javaprojects-activity-7095437035125043200-fWDl?utm_source=share&utm_medium=member_desktop"
-                  class="button button--flex button--small portfolio__button"
-                >
-                  See Live
-                  <i class="uil uil-external-link-alt button__icon"></i>
-                </a>
-              </div>
-            </div>
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
           </div>
-
-          <!-- add arrows -->
-          <div class="swiper-button-next">
-            <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
-          </div>
-          <div class="swiper-button-prev">
-            <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
-          </div>
-          <!-- add pagination -->
-          <div class="swiper-pagination"></div>
         </div>
       </section>
 
@@ -1664,44 +1660,181 @@
       </div>
     </div>
 
-    <!--=============== SWIPER JS ===============-->
-    <script src="assets/swiper-bundle.min.js"></script>
-
-    <!--=============== MAIN JS ===============-->
-    <script src="assets/main.js"></script>
+    <!-- External Libraries -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
     
-    <!-- Facebook Updates Tabs -->
+    <!-- Core Scripts -->
+    <script src="assets/js/theme.js" defer></script>
+    <script src="assets/js/navigation.js" defer></script>
+    <script src="assets/js/scroll-progress.js" defer></script>
+    <script src="assets/js/social-sidebar.js" defer></script>
+    <script src="assets/js/welcome.js" defer></script>
+    <script src="assets/js/blog.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+    
+    <!-- Initialize Portfolio Swiper -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        // Get all tab elements
-        const tabs = document.querySelectorAll('.facebook-updates__tab');
-        const panes = document.querySelectorAll('.facebook-updates__pane');
+        // Check if portfolio container exists
+        const portfolioContainer = document.querySelector('.portfolio__container');
+        if (!portfolioContainer) return;
         
-        // Add click event to each tab
-        tabs.forEach(tab => {
-          tab.addEventListener('click', () => {
-            // Remove active class from all tabs and panes
-            tabs.forEach(t => t.classList.remove('active'));
-            panes.forEach(p => p.classList.remove('active'));
-            
-            // Add active class to clicked tab and corresponding pane
-            tab.classList.add('active');
-            const targetId = tab.getAttribute('data-target');
-            document.querySelector(targetId).classList.add('active');
-          });
+        // Initialize Swiper for Portfolio
+        const portfolioSwiper = new Swiper(portfolioContainer, {
+          // Enable loop
+          loop: true,
+          
+          // Navigation arrows
+          navigation: {
+            nextEl: portfolioContainer.querySelector('.swiper-button-next'),
+            prevEl: portfolioContainer.querySelector('.swiper-button-prev'),
+          },
+          
+          // Pagination dots
+          pagination: {
+            el: portfolioContainer.querySelector('.swiper-pagination'),
+            clickable: true,
+            dynamicBullets: true,
+          },
+          
+          // Autoplay settings
+          autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
+          },
+          
+          // Responsive breakpoints
+          breakpoints: {
+            // when window width is >= 320px
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 20
+            },
+            // when window width is >= 640px
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 25
+            },
+            // when window width is >= 900px
+            900: {
+              slidesPerView: 2,
+              spaceBetween: 30
+            },
+            // when window width is >= 1200px
+            1200: {
+              slidesPerView: 2,
+              spaceBetween: 40
+            },
+            // when window width is >= 1400px
+            1400: {
+              slidesPerView: 3,
+              spaceBetween: 40
+            }
+          },
+          
+            // Mousewheel control
+          mousewheel: {
+            forceToAxis: true,
+          },
+          
+          // Coverflow effect
+          effect: 'coverflow',
+          coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 2.5,
+            slideShadows: true,
+          },
+          
+          // Enable grab cursor
+          grabCursor: true,
+          
+          // Keyboard control
+          keyboard: {
+            enabled: true,
+            onlyInViewport: true,
+          },
+          
+          // Accessibility
+          a11y: {
+            prevSlideMessage: 'Previous slide',
+            nextSlideMessage: 'Next slide',
+            firstSlideMessage: 'This is the first slide',
+            lastSlideMessage: 'This is the last slide',
+            paginationBulletMessage: 'Go to slide {{index}}',
+          }
+        });  
+        
+        // Pause autoplay when hovering over the slider
+        portfolioContainer.addEventListener('mouseenter', () => {
+          if (portfolioSwiper.autoplay.running) {
+            portfolioSwiper.autoplay.stop();
+          }
+        });
+        
+        portfolioContainer.addEventListener('mouseleave', () => {
+          if (!portfolioSwiper.autoplay.running) {
+            portfolioSwiper.autoplay.start();
+          }
         });
       });
     </script>
-    
-    <!-- CV Section Tabs -->
+
+    <!-- Initialize Components -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        // CV Tabs
-        const tabs = document.querySelectorAll('[data-target]');
+        // Initialize Swiper
+        if (document.querySelector('.swiper-container')) {
+          const swiper = new Swiper('.swiper-container', {
+            loop: true,
+            grabCursor: true,
+            spaceBetween: 48,
+            pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+            },
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+              568: {
+                slidesPerView: 2,
+              }
+            }
+          });
+        }
+
+        // Initialize Facebook Updates Tabs
+        const fbTabs = document.querySelectorAll('.facebook-updates__tab');
+        const fbPanes = document.querySelectorAll('.facebook-updates__pane');
+        
+        if (fbTabs.length > 0) {
+          fbTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+              // Remove active class from all tabs and panes
+              fbTabs.forEach(t => t.classList.remove('active'));
+              fbPanes.forEach(p => p.classList.remove('active'));
+              
+              // Add active class to clicked tab and corresponding pane
+              tab.classList.add('active');
+              const targetId = tab.getAttribute('data-target');
+              if (targetId) {
+                const targetPane = document.querySelector(targetId);
+                if (targetPane) targetPane.classList.add('active');
+              }
+            });
+          });
+        }
+
+        // Initialize CV Tabs
+        const cvTabs = document.querySelectorAll('[data-target]');
         const tabContents = document.querySelectorAll('[data-content]');
         const tabButtons = document.querySelectorAll('.cv__button');
         
-        // Function to switch tabs
         function switchTab(targetId) {
           // Hide all tab contents
           tabContents.forEach(content => {
@@ -1714,34 +1847,31 @@
           });
           
           // Show the selected tab content
-          document.querySelector(targetId).classList.add('cv__active');
+          const targetContent = document.querySelector(targetId);
+          if (targetContent) targetContent.classList.add('cv__active');
           
           // Add active class to the clicked button
-          document.querySelector(`[data-target="${targetId}"]`).classList.add('cv__active');
+          const activeButton = document.querySelector(`[data-target="${targetId}"]`);
+          if (activeButton) activeButton.classList.add('cv__active');
         }
         
         // Add click event listeners to tab buttons
         tabButtons.forEach(button => {
           button.addEventListener('click', () => {
             const target = button.getAttribute('data-target');
-            switchTab(target);
+            if (target) switchTab(target);
           });
         });
         
-        // Initialize with the first tab active
+        // Initialize with the first tab active if available
         if (tabButtons.length > 0) {
           const firstTabId = tabButtons[0].getAttribute('data-target');
-          switchTab(firstTabId);
+          if (firstTabId) switchTab(firstTabId);
         }
       });
     </script>
-    <script src="https://kit.fontawesome.com/2205d59d52.js" crossorigin="anonymous"></script>
-    <script src="assets/ptj.js"></script>
-    <script src="assets/js/navigation.js"></script>
-    <script src="assets/js/social-sidebar.js"></script>
-    <script src="assets/js/scroll-progress.js"></script>
-    <script src="assets/js/blog.js"></script>
-    
+
+    <!-- Inline Styles -->
     <style>
     /* Welcome Page Styles */
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
@@ -2277,6 +2407,386 @@
         const modalButtons = document.querySelectorAll('.hobbies__button');
         const modalCloses = document.querySelectorAll('.hobbies__modal-close');
         const modals = document.querySelectorAll('.hobbies__modal');
+        const welcomePage = document.getElementById('welcomePage');
+        const loaderBar = document.querySelector('.loader-bar');
+        const loaderPercentage = document.querySelector('.loader-percentage');
+
+        // Initialize loader animation
+        if (loaderBar && loaderPercentage && welcomePage) {
+          let width = 0;
+          
+          const updateLoader = () => {
+            if (width < 100) {
+              width += 0.5;
+              loaderBar.style.width = `${width}%`;
+              loaderPercentage.textContent = `${Math.round(width)}%`;
+              requestAnimationFrame(updateLoader);
+            }
+          };
+
+          // Start loader animation
+          setTimeout(updateLoader, 500);
+          
+          // Hide welcome page after animation completes
+          setTimeout(() => {
+            welcomePage.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            
+            // Remove welcome page from DOM after transition
+            setTimeout(() => {
+              welcomePage.remove();
+            }, 1000);
+          }, 5000);
+        }
+
+        // Modal functionality
+        if (modalButtons.length && modals.length) {
+          // Add click event to each button
+          modalButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+              // Hide all modals first
+              modals.forEach(modal => modal.classList.remove('active-modal'));
+              // Show the clicked modal
+              modals[index].classList.add('active-modal');
+              // Prevent body scroll when modal is open
+              document.body.style.overflow = 'hidden';
+            });
+          });
+
+          // Close modal when clicking the close button
+          modalCloses.forEach(close => {
+            close.addEventListener('click', () => {
+              const modal = close.closest('.hobbies__modal');
+              if (modal) {
+                modal.classList.remove('active-modal');
+                document.body.style.overflow = 'auto';
+              }
+            });
+          });
+
+          // Close modal when clicking outside the modal content
+          modals.forEach(modal => {
+            modal.addEventListener('click', (e) => {
+              if (e.target === modal) {
+                modal.classList.remove('active-modal');
+                document.body.style.overflow = 'auto';
+              }
+            });
+          });
+
+          // Close modal with Escape key
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+              modals.forEach(modal => {
+                if (modal.classList.contains('active-modal')) {
+                  modal.classList.remove('active-modal');
+                  document.body.style.overflow = 'auto';
+                }
+              });
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
+
+    
+    .welcome-title-letter::before {
+        transform: translateZ(0.5em);
+        filter: brightness(1.2);
+    }
+    
+    .welcome-title-letter::after {
+        transform: rotateX(90deg) translateZ(1em);
+        filter: brightness(0.8);
+    }
+    
+    .welcome-subtitle {
+        font-size: 1.5rem;
+        margin: 3rem 0;
+        color: #e0e0e0;
+        opacity: 0;
+        position: relative;
+        display: inline-block;
+        animation: fadeInUp 0.8s ease-out forwards 1.5s;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .welcome-subtitle-text {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .welcome-subtitle-text::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background: linear-gradient(90deg, #00dbde, #fc00ff);
+        animation: underline 1s ease-out forwards 1.5s;
+    }
+    
+    .welcome-loader {
+        width: 300px;
+        height: 6px;
+        background: rgba(255, 255, 255, 0.1);
+        margin: 3rem auto;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        opacity: 0;
+        transform: scaleX(0.8);
+        animation: 
+            fadeIn 0.8s ease-out forwards 1.2s,
+            scaleIn 0.5s ease-out 1.2s forwards;
+        box-shadow: 0 0 15px rgba(0, 219, 222, 0.2);
+    }
+    
+    .loader-bar {
+        height: 100%;
+        width: 0;
+        background: linear-gradient(90deg, #00dbde, #fc00ff, #00dbde);
+        background-size: 200% auto;
+        position: relative;
+        border-radius: 10px;
+        animation: gradient 3s linear infinite;
+        box-shadow: 0 0 10px rgba(0, 219, 222, 0.5);
+        transition: width 0.3s ease-out;
+    }
+    
+    .loader-percentage {
+        position: absolute;
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        font-size: 0.9rem;
+        font-weight: 600;
+        opacity: 0;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        animation: fadeIn 0.5s ease-out 0.5s forwards;
+    }
+    
+    /* Scroll indicator styles removed as per user request */
+    
+    .welcome-particles {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    
+    @keyframes letterReveal {
+        to {
+            opacity: 1;
+            transform: translateY(0) rotateX(0);
+        }
+    }
+    
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0) rotateX(0);
+        }
+        50% {
+            transform: translateY(-10px) rotateX(5deg);
+            text-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+        }
+    }
+    
+    @keyframes lineReveal {
+        to {
+            transform: scaleX(1);
+        }
+    }
+    
+    @keyframes pulse {
+        0%, 100% {
+            opacity: 0.3;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.1;
+            transform: scale(1.1);
+        }
+    }
+    
+    @keyframes scaleIn {
+        to {
+            transform: scaleX(1);
+        }
+    }
+    
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes fadeIn {
+        to { 
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    
+    @keyframes underline {
+        to { width: 100%; }
+    }
+    
+    .welcome-page.hidden {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+    }
+    </style>
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+    // Add mousemove effect for welcome section
+    function initWelcomeEffects() {
+        const welcomeTitle = document.querySelector('.welcome-title-wrapper');
+        if (!welcomeTitle) return;
+        
+        document.addEventListener('mousemove', (e) => {
+            const { left, top, width, height } = welcomeTitle.getBoundingClientRect();
+            const x = (e.clientX - left) / width - 0.5;
+            const y = (e.clientY - top) / height - 0.5;
+            
+            // Apply 3D tilt effect
+            welcomeTitle.style.transform = `perspective(1000px) rotateY(${x * 10}deg) rotateX(${y * -10}deg)`;
+            
+            // Add parallax effect to letters
+            document.querySelectorAll('.welcome-title-letter').forEach((letter, index) => {
+                const speed = (index + 1) * 0.03;
+                const xPos = x * 15 * speed;
+                const yPos = y * 15 * speed;
+                letter.style.transform = `translate3d(${xPos}px, ${yPos}px, ${Math.abs(x * 30)}px)`;
+            });
+        });
+        
+        // Reset transform when mouse leaves
+        welcomeTitle.addEventListener('mouseleave', () => {
+            welcomeTitle.style.transform = 'perspective(1000px) rotateY(0) rotateX(0)';
+            document.querySelectorAll('.welcome-title-letter').forEach(letter => {
+                letter.style.transform = 'translate3d(0, 0, 0)';
+            });
+        });
+    }
+    
+    // Initialize effects when DOM is loaded
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initWelcomeEffects);
+    } else {
+        initWelcomeEffects();
+    }
+    
+    // Welcome page animation and transition
+    document.addEventListener('DOMContentLoaded', function() {
+        const welcomePage = document.getElementById('welcomePage');
+        if (!welcomePage) return;
+        
+        // Add mouse move effect for dynamic background
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            // Move shapes based on mouse position
+            document.querySelectorAll('.shape').forEach((shape, index) => {
+                const moveX = (x - 0.5) * 50 * (index + 1);
+                const moveY = (y - 0.5) * 30 * (index + 1);
+                shape.style.transform = `translate(${moveX}px, ${moveY}px) ${shape.style.transform.split(' ').slice(2).join(' ')}`;
+            });
+        });
+        
+        const loaderBar = document.querySelector('.loader-bar');
+        const loaderPercentage = document.querySelector('.loader-percentage');
+        let width = 0;
+        
+        // Initialize particles.js
+        if (typeof particlesJS !== 'undefined') {
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 80, density: { enable: true, value_area: 800 } },
+                    color: { value: '#ffffff' },
+                    shape: { type: 'circle' },
+                    opacity: { value: 0.5, random: true },
+                    size: { value: 3, random: true },
+                    line_linked: { enable: true, distance: 150, color: '#ffffff', opacity: 0.2, width: 1 },
+                    move: { enable: true, speed: 2, direction: 'none', random: true, straight: false, out_mode: 'out' }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: {
+                        onhover: { enable: true, mode: 'repulse' },
+                        onclick: { enable: true, mode: 'push' },
+                        resize: true
+                    }
+                },
+                retina_detect: true
+            });
+        }
+        
+        // Animate loader bar
+        const animateLoader = () => {
+            if (width >= 100) {
+                clearInterval(interval);
+                return;
+            }
+            width++;
+            loaderBar.style.width = width + '%';
+            loaderPercentage.textContent = width + '%';
+        };
+        
+        const interval = setInterval(animateLoader, 30);
+        
+        // Hide welcome page after animation completes
+        setTimeout(() => {
+            welcomePage.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            
+            // Remove welcome page from DOM after transition
+            setTimeout(() => {
+                welcomePage.remove();
+                // No scroll indicator added to home section as per user request
+            }, 1000);
+        }, 5000);
+        
+        // Function to handle loader animation
+    function updateLoader() {
+        if (width < 100) {
+            width += 0.5;
+            loaderBar.style.width = width + '%';
+            loaderPercentage.textContent = Math.round(width) + '%';
+            requestAnimationFrame(updateLoader);
+        }
+    }
+    
+    // Start loader animation
+    setTimeout(() => {
+        updateLoader();
+    }, 500);
+    });
+    </script>
+
+    <!-- Hobbies Modal -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Get all modal buttons and modals
+        const modalButtons = document.querySelectorAll('.hobbies__button');
+        const modalCloses = document.querySelectorAll('.hobbies__modal-close');
+        const modals = document.querySelectorAll('.hobbies__modal');
 
         // Add click event to each button
         modalButtons.forEach((button, index) => {
@@ -2325,121 +2835,54 @@
         });
       });
     </script>
-    
-    <!-- Mobile Navigation and Scroll Behavior -->
-    <script>
-      /* ================= MOBILE NAVIGATION =============== */
-      document.addEventListener('DOMContentLoaded', function() {
-        const navMenu = document.getElementById('nav-menu');
-        const navToggle = document.getElementById('nav-toggle');
-        const navClose = document.getElementById('nav-close');
-        const navLinks = document.querySelectorAll('.nav__link');
-        const body = document.body;
-        
-        // Function to toggle menu state
-        function toggleMenu(show) {
-          if (show) {
-            navMenu.classList.add('show-menu');
-            body.classList.add('menu-open');
-          } else {
-            navMenu.classList.remove('show-menu');
-            body.classList.remove('menu-open');
-          }
-        }
-        
-        // Show menu
-        if(navToggle) {
-          navToggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            toggleMenu(!navMenu.classList.contains('show-menu'));
-          });
-        }
-        
-        // Hide menu
-        if(navClose) {
-          navClose.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            toggleMenu(false);
-          });
-        }
-        
-        // Close menu when clicking on a nav link
-        navLinks.forEach(link => {
-          link.addEventListener('click', function(e) {
-            e.stopPropagation();
-            toggleMenu(false);
+  </body>
+</html>
+
+            document.body.style.overflow = 'hidden';
           });
         });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-          if (navMenu.classList.contains('show-menu') && 
-              !navMenu.contains(e.target) && 
-              e.target !== navToggle) {
-            toggleMenu(false);
-          }
+
+        // Close modal when clicking the close button
+        modalCloses.forEach(close => {
+          close.addEventListener('click', () => {
+            const modal = close.closest('.hobbies__modal');
+            modal.classList.remove('active-modal');
+            document.body.style.overflow = 'auto';
+          });
         });
-        
-        // Close menu on escape key
-        document.addEventListener('keydown', function(e) {
-          if (e.key === 'Escape' && navMenu.classList.contains('show-menu')) {
-            toggleMenu(false);
+
+
+        // Close modal when clicking outside the modal content
+        modals.forEach(modal => {
+          modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+              modal.classList.remove('active-modal');
+              document.body.style.overflow = 'auto';
+            }
+          });
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            modals.forEach(modal => {
+              if (modal.classList.contains('active-modal')) {
+                modal.classList.remove('active-modal');
+                document.body.style.overflow = 'auto';
+              }
+            });
           }
         });
       });
-      
-      // Add shadow to header on scroll
-      function scrollHeader() {
-        const header = document.getElementById('header');
-        if(window.scrollY >= 80) {
-          header.classList.add('scroll-header');
-        } else {
-          header.classList.remove('scroll-header');
-        }
-      }
-      window.addEventListener('scroll', scrollHeader);
-      
-      // Active link highlighting
-      const sections = document.querySelectorAll('section[id]');
-      function scrollActive() {
-        const scrollY = window.pageYOffset;
-        
-        sections.forEach(section => {
-          const sectionHeight = section.offsetHeight;
-          const sectionTop = section.offsetTop - 50;
-          const sectionId = section.getAttribute('id');
-          
-          if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            const link = document.querySelector(`.nav__menu a[href*=${sectionId}]`);
-            if(link) {
-              link.classList.add('active-link');
-            }
-          } else {
-            const link = document.querySelector(`.nav__menu a[href*=${sectionId}]`);
-            if(link) {
-              link.classList.remove('active-link');
-            }
-          }
-        });
-      }
-      window.addEventListener('scroll', scrollActive);
-      
-      // Initialize scroll reveal
-      const sr = ScrollReveal({
-        origin: 'top',
-        distance: '60px',
-        duration: 2500,
-        delay: 400,
-        // reset: true
-      });
-      
-      sr.reveal(`.home__data`);
-      sr.reveal(`.home__handle`, {delay: 700});
-      sr.reveal(`.home__social, .home__scroll`, {delay: 900, origin: 'bottom'});
     </script>
   </body>
 </html>
 
-
+              }
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -102,6 +102,31 @@ function scrollUp() {
 }
 window.addEventListener("scroll", scrollUp);
 
+/*==================== MENU SHOW Y HIDDEN ====================*/
+const navMenu = document.getElementById('nav-menu'),
+      navToggle = document.getElementById('nav-toggle'),
+      navClose = document.getElementById('nav-close');
+
+// Show menu
+if(navToggle){
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.add('show-menu');
+  })
+}
+
+// Hide menu
+if(navClose){
+  navClose.addEventListener('click', () => {
+    navMenu.classList.remove('show-menu');
+  })
+}
+
+// Hide menu on nav__link click (for mobile UX)
+const navLinks = document.querySelectorAll('.nav__link');
+navLinks.forEach(n => n.addEventListener('click', () => {
+  navMenu.classList.remove('show-menu');
+}));
+
 /*==================== DARK LIGHT THEME ====================*/
 const themeButton = document.getElementById("theme-button");
 const darkTheme = "dark-theme";
