@@ -152,67 +152,96 @@
       <!--========================= Home =====================-->
 
       <section class="home section" id="home">
-        <div class="home__container container">
-          <div class="home__content">
+        <div class="home__container container grid">
+          <div class="home__content grid">
+            <div class="home__social">
+              <a
+                href="https://www.linkedin.com/in/ayushkuikel4/"
+                target="_blank"
+                class="home__social-icon"
+                title="LinkedIn"
+              >
+                <i class="uil uil-linkedin-alt home__icon"></i>
+              </a>
+
+              <a
+                href="https://github.com/Ayush2056"
+                target="_blank"
+                class="home__social-icon"
+                title="GitHub"
+              >
+                <i class="uil uil-github-alt home__icon"></i>
+              </a>
+
+              <a
+                href="https://www.facebook.com/ayush.kuikel"
+                target="_blank"
+                class="home__social-icon"
+                title="Facebook"
+              >
+                <i class="uil uil-facebook-alt home__icon"></i>
+              </a>
+            </div>
+
             <div class="home__data">
-              <h1 class="home__title">
-                <span>Hello, I'm</span>
-                Ayush Kuikel
-              </h1>
+              <h1 class="home__title">Hi, I'm AyuSh Kuikel</h1>
               <h3 class="home__subtitle">
                 <span id="typed-text"></span>
                 <span class="cursor">|</span>
               </h3>
               <p class="home__description">
-                Graduate Student in Computer Science at <strong>Wolverhampton University</strong>, UK. 
-                Passionate about creating innovative solutions and pushing the boundaries of technology.
+                Graduate Student in Computer Science at <strong>Wolverhampton University</strong>, UK.
               </p>
               <div class="home__buttons">
                 <a href="#contact" class="button button--flex">
-                  Get in Touch <i class="uil uil-message button__icon"></i>
+                  Contact me<i class="uil uil-message button__icon"></i>
                 </a>
-                <a href="assets/CVS.pdf" class="button button--flex button--white" download>
-                  Download CV <i class="uil uil-download button__icon"></i>
+                <a href="assets/CVS.pdf" class="button button--flex button--white">
+                  Download CV<i class="uil uil-download button__icon"></i>
                 </a>
               </div>
             </div>
 
             <div class="home__img">
-              <img src="assets/img/profile.png" alt="Ayush Kuikel" />
+              <svg
+                class="home__blob"
+                viewBox="0 0 200 187"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <mask id="mask0" mask-type="alpha">
+                  <path
+                    d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
+                      130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
+                      97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
+                      0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"
+                  />
+                </mask>
+                <g mask="url(#mask0)">
+                  <path
+                    d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
+                      165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
+                      129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
+                     -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"
+                  />
+                  <image
+                    class="home__blob-img"
+                    x="-70"
+                    y="-27"
+                    xlink:href="assets/img/AyuSh.jpg"
+                  />
+                </g>
+              </svg>
             </div>
-            
-            <div class="home__social">
-              <a href="https://www.linkedin.com/in/ayushkuikel4/" target="_blank" class="home__social-icon" title="LinkedIn">
-                <i class="uil uil-linkedin-alt"></i>
-              </a>
-              <a href="https://github.com/Ayush2056" target="_blank" class="home__social-icon" title="GitHub">
-                <i class="uil uil-github-alt"></i>
-              </a>
-              <a href="https://www.facebook.com/ayush.kuikel" target="_blank" class="home__social-icon" title="Facebook">
-                <i class="uil uil-facebook-alt"></i>
-              </a>
-              <a href="https://twitter.com/ayush_kuikel" target="_blank" class="home__social-icon" title="Twitter">
-                <i class="uil uil-twitter-alt"></i>
-              </a>
-            </div>
-            
-            <a href="#about" class="home__scroll">
-              <span class="home__scroll-mouse">
-                <i class="uil uil-mouse-alt"></i>
-              </span>
+          </div>
+
+          <div class="home__scroll">
+            <a href="#about" class="home__scroll-button button--flex">
+              <i class="uil uil-mouse-alt home__scroll-mouse"></i>
               <span class="home__scroll-name">Scroll down</span>
               <i class="uil uil-arrow-down home__scroll-arrow"></i>
             </a>
           </div>
-        </div>
-
-        <div class="home__scroll">
-          <a href="#about" class="home__scroll-button button--flex">
-            <i class="uil uil-mouse-alt home__scroll-mouse"></i>
-            <span class="home__scroll-name">Scroll down</span>
-            <i class="uil uil-arrow-down home__scroll-arrow"></i>
-          </a>
-        </div>
         </div>
       </section>
 
@@ -2301,29 +2330,64 @@
     <!-- Mobile Navigation and Scroll Behavior -->
     <script>
       /* ================= MOBILE NAVIGATION =============== */
-      const navMenu = document.getElementById('nav-menu');
-      const navToggle = document.getElementById('nav-toggle');
-      const navClose = document.getElementById('nav-close');
-      
-      // Show menu
-      if(navToggle) {
-        navToggle.addEventListener('click', () => {
-          navMenu.classList.add('show-menu');
+      document.addEventListener('DOMContentLoaded', function() {
+        const navMenu = document.getElementById('nav-menu');
+        const navToggle = document.getElementById('nav-toggle');
+        const navClose = document.getElementById('nav-close');
+        const navLinks = document.querySelectorAll('.nav__link');
+        const body = document.body;
+        
+        // Function to toggle menu state
+        function toggleMenu(show) {
+          if (show) {
+            navMenu.classList.add('show-menu');
+            body.classList.add('menu-open');
+          } else {
+            navMenu.classList.remove('show-menu');
+            body.classList.remove('menu-open');
+          }
+        }
+        
+        // Show menu
+        if(navToggle) {
+          navToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleMenu(!navMenu.classList.contains('show-menu'));
+          });
+        }
+        
+        // Hide menu
+        if(navClose) {
+          navClose.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleMenu(false);
+          });
+        }
+        
+        // Close menu when clicking on a nav link
+        navLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleMenu(false);
+          });
         });
-      }
-      
-      // Hide menu
-      if(navClose) {
-        navClose.addEventListener('click', () => {
-          navMenu.classList.remove('show-menu');
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+          if (navMenu.classList.contains('show-menu') && 
+              !navMenu.contains(e.target) && 
+              e.target !== navToggle) {
+            toggleMenu(false);
+          }
         });
-      }
-      
-      // Close menu when clicking on a nav link
-      const navLinks = document.querySelectorAll('.nav__link');
-      navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          navMenu.classList.remove('show-menu');
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && navMenu.classList.contains('show-menu')) {
+            toggleMenu(false);
+          }
         });
       });
       
