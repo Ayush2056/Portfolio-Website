@@ -3,13 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="MobileOptimized" content="width" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="theme-color" content="#3a86ff" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AyuSH K</title>
     <link rel="stylesheet" href="assets/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/newcss.css" />
@@ -17,225 +11,7 @@
       rel="stylesheet"
       href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
     />
-    <style>
-      /* Base styles for all devices */
-      html {
-        -webkit-text-size-adjust: 100%;
-        -ms-text-size-adjust: 100%;
-        -webkit-tap-highlight-color: transparent;
-      }
-      
-      body {
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-rendering: optimizeLegibility;
-        -webkit-text-size-adjust: 100%;
-        -ms-text-size-adjust: 100%;
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      }
-      
-      /* Prevent text size adjustment on orientation change */
-      @media screen and (max-width: 768px) {
-        html {
-          -webkit-text-size-adjust: none;
-          -moz-text-size-adjust: none;
-          text-size-adjust: none;
-        }
-      }
-      
-      .home__subtitle {
-        font-size: 1.25rem;
-        font-weight: 500;
-        color: var(--text-color);
-        min-height: 30px;
-        position: relative;
-      }
-      
-      /* Mobile Navigation */
-      @media screen and (max-width: 768px) {
-        .nav__menu {
-          position: fixed;
-          top: -100%;
-          left: 0;
-          width: 100%;
-          background-color: var(--container-color);
-          padding: 2rem 1.5rem 4rem;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-          border-radius: 0 0 1.5rem 1.5rem;
-          transition: 0.4s;
-          z-index: var(--z-fixed);
-          max-height: 80vh;
-          overflow-y: auto;
-        }
-        
-        .show-menu {
-          top: 0;
-        }
-        
-        .nav__list {
-          display: grid;
-          gap: 1.5rem;
-        }
-        
-        .nav__toggle {
-          display: flex !important;
-        }
-        
-        .nav__close {
-          position: absolute;
-          right: 1.3rem;
-          top: 0.5rem;
-          font-size: 1.8rem;
-          cursor: pointer;
-          color: var(--title-color);
-        }
-        
-        .nav__close:hover {
-          color: var(--first-color);
-        }
-        
-        .home__container {
-          gap: 1rem;
-        }
-        
-        .home__content {
-          grid-template-columns: 0.5fr 3fr;
-          padding-top: 3.5rem;
-        }
-        
-        .home__data {
-          grid-column: 1/3;
-        }
-        
-        .home__img {
-          order: -1;
-          width: 200px;
-          height: 200px;
-        }
-        
-        .home__scroll {
-          display: none;
-        }
-        
-        /* Adjust dropdown menu for mobile */
-        .nav__dropdown-menu {
-          position: static;
-          display: none;
-          width: 100%;
-          box-shadow: none;
-          padding: 0.5rem 0 0 1rem;
-          background-color: transparent;
-          border-left: 2px solid var(--first-color);
-          margin-top: 0.5rem;
-        }
-        
-        .nav__dropdown.active .nav__dropdown-menu {
-          display: block;
-        }
-        
-        .nav__dropdown-arrow {
-          transition: transform 0.3s ease;
-        }
-        
-        .nav__dropdown.active .nav__dropdown-arrow {
-          transform: rotate(180deg);
-        }
-      }
-      
-      /* Welcome page responsive styles */
-      @media screen and (max-width: 768px) {
-        .welcome-title-letter {
-          font-size: 2.5rem;
-          margin: 0 2px;
-        }
-        
-        .welcome-subtitle-text {
-          font-size: 1rem;
-        }
-        
-        .welcome-loader {
-          margin-top: 2rem;
-          width: 80%;
-        }
-        
-        .loader-bar {
-          height: 6px;
-        }
-        
-        .loader-percentage {
-          font-size: 0.9rem;
-        }
-        
-        /* Adjust section padding for mobile */
-        section {
-          padding: 4rem 0 2rem;
-        }
-        
-        /* Adjust portfolio items for mobile */
-        .portfolio__content {
-          padding: 1rem;
-        }
-        
-        /* Adjust contact form for mobile */
-        .contact__form {
-          grid-template-columns: 1fr;
-        }
-        
-        .contact__inputs {
-          grid-template-columns: 1fr;
-          gap: 1rem;
-        }
-        
-        /* Adjust footer for mobile */
-        .footer__container {
-          grid-template-columns: 1fr;
-          row-gap: 2rem;
-        }
-        
-        .footer__socials {
-          justify-content: center;
-        }
-      }
-      
-      /* Small devices */
-      @media screen and (max-width: 350px) {
-        .container {
-          margin-left: var(--mb-1);
-          margin-right: var(--mb-1);
-        }
-        
-        .home__img {
-          width: 180px;
-          height: 180px;
-        }
-        
-        .home__title {
-          font-size: var(--h1-font-size);
-        }
-        
-        .home__subtitle {
-          font-size: var(--normal-font-size);
-        }
-        
-        .home__description {
-          font-size: var(--small-font-size);
-        }
-      }
-
-      .cursor {
-        display: inline-block;
-        width: 2px;
-        background-color: var(--title-color);
-        animation: blink 0.7s infinite;
-        margin-left: 2px;
-        height: 1em;
-      }
+    <!-- Moved styles to external CSS file -->
 
       @keyframes blink {
         0%, 50%, 100% {
@@ -243,39 +19,6 @@
         }
         25%, 75% {
           opacity: 0;
-        }
-      }
-      
-      /* Make buttons and links more touch-friendly */
-      .button, 
-      button,
-      [role="button"],
-      input[type="submit"],
-      input[type="reset"],
-      input[type="button"] {
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-        -webkit-tap-highlight-color: transparent;
-        touch-action: manipulation;
-      }
-      
-      /* Improve touch targets */
-      @media (hover: none) {
-        .nav__link,
-        .button,
-        .home__social-icon,
-        .skills__header,
-        .qualification__button,
-        .services__button,
-        .portfolio__button,
-        .project__button,
-        .contact__button,
-        .footer__social-link,
-        .footer__link {
-          min-height: 44px;
-          min-width: 44px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
         }
       }
     </style>
@@ -323,7 +66,16 @@
     <header class="header" id="header">
       <nav class="nav container">
         <a href="#" class="nav__logo">AyuSHK</a>
+        
+        <!-- Mobile menu toggle -->
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="uil uil-bars"></i>
+        </div>
+        
         <div class="nav__menu" id="nav-menu">
+          <div class="nav__close" id="nav-close">
+            <i class="uil uil-times"></i>
+          </div>
           <ul class="nav__list grid">
             <li class="nav__item">
               <a href="#home" class="nav__link active-link">
@@ -400,96 +152,67 @@
       <!--========================= Home =====================-->
 
       <section class="home section" id="home">
-        <div class="home__container container grid">
-          <div class="home__content grid">
-            <div class="home__social">
-              <a
-                href="https://www.linkedin.com/in/ayushkuikel4/"
-                target="_blank"
-                class="home__social-icon"
-                title="LinkedIn"
-              >
-                <i class="uil uil-linkedin-alt home__icon"></i>
-              </a>
-
-              <a
-                href="https://github.com/Ayush2056"
-                target="_blank"
-                class="home__social-icon"
-                title="GitHub"
-              >
-                <i class="uil uil-github-alt home__icon"></i>
-              </a>
-
-              <a
-                href="https://www.facebook.com/ayush.kuikel"
-                target="_blank"
-                class="home__social-icon"
-                title="Facebook"
-              >
-                <i class="uil uil-facebook-alt home__icon"></i>
-              </a>
-            </div>
-
+        <div class="home__container container">
+          <div class="home__content">
             <div class="home__data">
-              <h1 class="home__title">Hi, I'm AyuSh Kuikel</h1>
+              <h1 class="home__title">
+                <span>Hello, I'm</span>
+                Ayush Kuikel
+              </h1>
               <h3 class="home__subtitle">
                 <span id="typed-text"></span>
                 <span class="cursor">|</span>
               </h3>
               <p class="home__description">
-                Graduate Student in Computer Science at <strong>Wolverhampton University</strong>, UK.
+                Graduate Student in Computer Science at <strong>Wolverhampton University</strong>, UK. 
+                Passionate about creating innovative solutions and pushing the boundaries of technology.
               </p>
               <div class="home__buttons">
                 <a href="#contact" class="button button--flex">
-                  Contact me<i class="uil uil-message button__icon"></i>
+                  Get in Touch <i class="uil uil-message button__icon"></i>
                 </a>
-                <a href="assets/CVS.pdf" class="button button--flex button--white">
-                  Download CV<i class="uil uil-download button__icon"></i>
+                <a href="assets/CVS.pdf" class="button button--flex button--white" download>
+                  Download CV <i class="uil uil-download button__icon"></i>
                 </a>
               </div>
             </div>
 
             <div class="home__img">
-              <svg
-                class="home__blob"
-                viewBox="0 0 200 187"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-              >
-                <mask id="mask0" mask-type="alpha">
-                  <path
-                    d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
-                      130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
-                      97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
-                      0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"
-                  />
-                </mask>
-                <g mask="url(#mask0)">
-                  <path
-                    d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
-                      165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
-                      129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
-                     -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"
-                  />
-                  <image
-                    class="home__blob-img"
-                    x="-70"
-                    y="-27"
-                    xlink:href="assets/img/AyuSh.jpg"
-                  />
-                </g>
-              </svg>
+              <img src="assets/img/profile.png" alt="Ayush Kuikel" />
             </div>
-          </div>
-
-          <div class="home__scroll">
-            <a href="#about" class="home__scroll-button button--flex">
-              <i class="uil uil-mouse-alt home__scroll-mouse"></i>
+            
+            <div class="home__social">
+              <a href="https://www.linkedin.com/in/ayushkuikel4/" target="_blank" class="home__social-icon" title="LinkedIn">
+                <i class="uil uil-linkedin-alt"></i>
+              </a>
+              <a href="https://github.com/Ayush2056" target="_blank" class="home__social-icon" title="GitHub">
+                <i class="uil uil-github-alt"></i>
+              </a>
+              <a href="https://www.facebook.com/ayush.kuikel" target="_blank" class="home__social-icon" title="Facebook">
+                <i class="uil uil-facebook-alt"></i>
+              </a>
+              <a href="https://twitter.com/ayush_kuikel" target="_blank" class="home__social-icon" title="Twitter">
+                <i class="uil uil-twitter-alt"></i>
+              </a>
+            </div>
+            
+            <a href="#about" class="home__scroll">
+              <span class="home__scroll-mouse">
+                <i class="uil uil-mouse-alt"></i>
+              </span>
               <span class="home__scroll-name">Scroll down</span>
               <i class="uil uil-arrow-down home__scroll-arrow"></i>
             </a>
           </div>
+        </div>
+
+        <div class="home__scroll">
+          <a href="#about" class="home__scroll-button button--flex">
+            <i class="uil uil-mouse-alt home__scroll-mouse"></i>
+            <span class="home__scroll-name">Scroll down</span>
+            <i class="uil uil-arrow-down home__scroll-arrow"></i>
+          </a>
+        </div>
         </div>
       </section>
 
@@ -1919,43 +1642,6 @@
     <!--=============== MAIN JS ===============-->
     <script src="assets/main.js"></script>
     
-    <!-- Mobile Optimization Script -->
-    <script>
-      // Prevent zoom on double-tap on mobile
-      document.documentElement.addEventListener('touchstart', function (event) {
-        if (event.touches.length > 1) {
-          event.preventDefault();
-        }
-      }, { passive: false });
-      
-      // Prevent double-tap zoom
-      let lastTouchEnd = 0;
-      document.documentElement.addEventListener('touchend', function (event) {
-        const now = (new Date()).getTime();
-        if (now - lastTouchEnd <= 300) {
-          event.preventDefault();
-        }
-        lastTouchEnd = now;
-      }, false);
-      
-      // Disable pull-to-refresh on mobile
-      document.body.style.overscrollBehaviorY = 'none';
-      
-      // Lock viewport on mobile
-      function lockViewport() {
-        const viewport = document.querySelector('meta[name=viewport]');
-        viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
-      }
-      
-      // Handle orientation changes
-      window.addEventListener('orientationchange', function() {
-        setTimeout(lockViewport, 100);
-      });
-      
-      // Initialize viewport locking
-      lockViewport();
-    </script>
-    
     <!-- Facebook Updates Tabs -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
@@ -1982,64 +1668,6 @@
     <!-- CV Section Tabs -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        /* ===== Mobile Menu Toggle ===== */
-        const navMenu = document.getElementById('nav-menu');
-        const navToggle = document.getElementById('nav-toggle');
-        const navClose = document.getElementById('nav-close');
-        const navLinks = document.querySelectorAll('.nav__link');
-        const navDropdowns = document.querySelectorAll('.nav__dropdown > .nav__link');
-        
-        // Show menu
-        if (navToggle) {
-          navToggle.addEventListener('click', () => {
-            navMenu.classList.add('show-menu');
-            document.body.style.overflow = 'hidden';
-          });
-        }
-        
-        // Hide menu
-        if (navClose) {
-          navClose.addEventListener('click', () => {
-            navMenu.classList.remove('show-menu');
-            document.body.style.overflow = '';
-          });
-        }
-        
-        // Close menu when clicking on a nav link
-        navLinks.forEach(link => {
-          link.addEventListener('click', () => {
-            navMenu.classList.remove('show-menu');
-            document.body.style.overflow = '';
-          });
-        });
-        
-        // Handle dropdown menus on mobile
-        navDropdowns.forEach(dropdown => {
-          dropdown.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768) { // Only for mobile
-              e.preventDefault();
-              const parent = dropdown.parentElement;
-              parent.classList.toggle('active');
-              
-              // Close other open dropdowns
-              navDropdowns.forEach(otherDropdown => {
-                if (otherDropdown !== dropdown) {
-                  otherDropdown.parentElement.classList.remove('active');
-                }
-              });
-            }
-          });
-        });
-        
-        // Close dropdowns when clicking outside
-        document.addEventListener('click', (e) => {
-          if (!e.target.matches('.nav__dropdown > .nav__link')) {
-            document.querySelectorAll('.nav__dropdown').forEach(dropdown => {
-              dropdown.classList.remove('active');
-            });
-          }
-        });
-        
         // CV Tabs
         const tabs = document.querySelectorAll('[data-target]');
         const tabContents = document.querySelectorAll('[data-content]');
@@ -2668,6 +2296,85 @@
           }
         });
       });
+    </script>
+    
+    <!-- Mobile Navigation and Scroll Behavior -->
+    <script>
+      /* ================= MOBILE NAVIGATION =============== */
+      const navMenu = document.getElementById('nav-menu');
+      const navToggle = document.getElementById('nav-toggle');
+      const navClose = document.getElementById('nav-close');
+      
+      // Show menu
+      if(navToggle) {
+        navToggle.addEventListener('click', () => {
+          navMenu.classList.add('show-menu');
+        });
+      }
+      
+      // Hide menu
+      if(navClose) {
+        navClose.addEventListener('click', () => {
+          navMenu.classList.remove('show-menu');
+        });
+      }
+      
+      // Close menu when clicking on a nav link
+      const navLinks = document.querySelectorAll('.nav__link');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('show-menu');
+        });
+      });
+      
+      // Add shadow to header on scroll
+      function scrollHeader() {
+        const header = document.getElementById('header');
+        if(window.scrollY >= 80) {
+          header.classList.add('scroll-header');
+        } else {
+          header.classList.remove('scroll-header');
+        }
+      }
+      window.addEventListener('scroll', scrollHeader);
+      
+      // Active link highlighting
+      const sections = document.querySelectorAll('section[id]');
+      function scrollActive() {
+        const scrollY = window.pageYOffset;
+        
+        sections.forEach(section => {
+          const sectionHeight = section.offsetHeight;
+          const sectionTop = section.offsetTop - 50;
+          const sectionId = section.getAttribute('id');
+          
+          if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            const link = document.querySelector(`.nav__menu a[href*=${sectionId}]`);
+            if(link) {
+              link.classList.add('active-link');
+            }
+          } else {
+            const link = document.querySelector(`.nav__menu a[href*=${sectionId}]`);
+            if(link) {
+              link.classList.remove('active-link');
+            }
+          }
+        });
+      }
+      window.addEventListener('scroll', scrollActive);
+      
+      // Initialize scroll reveal
+      const sr = ScrollReveal({
+        origin: 'top',
+        distance: '60px',
+        duration: 2500,
+        delay: 400,
+        // reset: true
+      });
+      
+      sr.reveal(`.home__data`);
+      sr.reveal(`.home__handle`, {delay: 700});
+      sr.reveal(`.home__social, .home__scroll`, {delay: 900, origin: 'bottom'});
     </script>
   </body>
 </html>
